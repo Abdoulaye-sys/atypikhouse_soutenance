@@ -6,7 +6,7 @@ include("config.php");
 
 ///search code
 	
-?><!-- FOR MORE PROJECTS visit: codeastro.com -->
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -69,7 +69,7 @@ include("config.php");
                 <div class="row">
                     <div class="col-md-6">
                         <h2 class="page-name float-left text-white text-uppercase mt-1 mb-0"><b>Filter Property</b></h2>
-                    </div><!-- FOR MORE PROJECTS visit: codeastro.com -->
+                    </div>
                     <div class="col-md-6">
                         <nav aria-label="breadcrumb" class="float-left float-md-right">
                             <ol class="breadcrumb bg-transparent m-0 p-0">
@@ -130,7 +130,7 @@ include("config.php");
                                         </div>
                                     </div>
                                 </div>
-                            </div><!-- FOR MORE PROJECTS visit: codeastro.com -->
+                            </div>
                             <?php 		
 										} 
 					
@@ -162,7 +162,7 @@ include("config.php");
                                 </nav>
                             </div>  -->
                         </div>
-                    </div><!-- FOR MORE PROJECTS visit: codeastro.com -->
+                    </div>
 					
                     <div class="col-lg-4">
                         <div class="sidebar-widget">

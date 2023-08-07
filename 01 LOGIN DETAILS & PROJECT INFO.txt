@@ -1,4 +1,3 @@
-**Log on to codeastro.com for more projects!***
 
 **Database Name: realestatephp**
 

@@ -48,10 +48,9 @@ if(isset($_REQUEST['calc']))
 <link rel="stylesheet" type="text/css" href="fonts/flaticon/flaticon.css">
 <link rel="stylesheet" type="text/css" href="css/style.css">
 <link rel="stylesheet" type="text/css" href="css/login.css">
-<!-- FOR MORE PROJECTS visit: codeastro.com -->
 <!--	Title
 	=========================================================-->
-<title>Real Estate PHP</title>
+<title>Atypik House</title>
 </head>
 <body>
 
@@ -90,7 +89,7 @@ if(isset($_REQUEST['calc']))
                     </div>
                 </div>
             </div>
-        </div> --><!-- FOR MORE PROJECTS visit: codeastro.com -->
+        </div> -->
          <!--	Banner   --->
 		 
 		 
@@ -120,7 +119,7 @@ if(isset($_REQUEST['calc']))
 							<tr class="text-center">
                                 <td><b>Total Duration</b></td>
                                 <td><b><?php echo $mon.' Months' ; ?></b></td>
-                            </tr><!-- FOR MORE PROJECTS visit: codeastro.com -->
+                            </tr>
 							<tr class="text-center">
                                 <td><b>Interest Rate</b></td>
                                 <td><b><?php echo $int.'%' ; ?></b></td>
@@ -142,7 +141,7 @@ if(isset($_REQUEST['calc']))
                     </table> 
 					</center>
             </div>
-        </div><!-- FOR MORE PROJECTS visit: codeastro.com -->
+        </div>
 	<!--	Submit property   -->
         
         

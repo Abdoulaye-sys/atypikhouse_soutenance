@@ -100,7 +100,7 @@ include("config.php");
                             <div class="overflow-hidden"> <img src="admin/user/<?php echo $row['6'];?>" alt="aimage"> </div>
                             <div class="py-3 text-center">
                                 <h5 class="text-secondary hover-text-success"><a href="#"><?php echo $row['1'];?></a></h5>
-                                <span>Real Estate - Agent</span> </div>
+                                <span>Atypik House - Agent</span> </div>
                         </div>
                     </div>
                    

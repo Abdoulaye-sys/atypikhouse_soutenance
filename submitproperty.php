@@ -75,12 +75,12 @@ if(isset($_POST['add']))
 	$result=mysqli_query($con,$sql);
 	if($result)
 		{
-			$msg="<p class='alert alert-success'>Property Inserted Successfully</p>";
+			$msg="<p class='alert alert-success'>Propriété insérée avec succès</p>";
 					
 		}
 		else
 		{
-			$error="<p class='alert alert-warning'>Property Not Inserted Some Error</p>";
+			$error="<p class='alert alert-warning'>Propriété non insérée Une erreur</p>";
 		}
 }							
 ?>
@@ -114,10 +114,9 @@ if(isset($_POST['add']))
 <link rel="stylesheet" type="text/css" href="fonts/flaticon/flaticon.css">
 <link rel="stylesheet" type="text/css" href="css/style.css">
 <link rel="stylesheet" type="text/css" href="css/login.css">
-<!-- FOR MORE PROJECTS visit: codeastro.com -->
 <!--	Title
 	=========================================================-->
-<title>Real Estate PHP</title>
+<title>Atypik House</title>
 </head>
 <body>
 
@@ -165,26 +164,26 @@ if(isset($_POST['add']))
             <div class="container">
                     <div class="row">
 						<div class="col-lg-12">
-							<h2 class="text-secondary double-down-line text-center">Submit Property</h2>
+							<h2 class="text-secondary double-down-line text-center">Soumettre la propriété</h2>
                         </div>
 					</div>
                     <div class="row p-5 bg-white">
                         <form method="post" enctype="multipart/form-data">
 								<div class="description">
-									<h5 class="text-secondary">Basic Information</h5><hr>
+									<h5 class="text-secondary">Informations de base</h5><hr>
 									<?php echo $error; ?>
 									<?php echo $msg; ?>
 									
 										<div class="row">
 											<div class="col-xl-12">
 												<div class="form-group row">
-													<label class="col-lg-2 col-form-label">Title</label>
+													<label class="col-lg-2 col-form-label">Titre</label>
 													<div class="col-lg-9">
-														<input type="text" class="form-control" name="title" required placeholder="Enter Title">
+														<input type="text" class="form-control" name="title" required placeholder="Entrez le titre">
 													</div>
-												</div><!-- FOR MORE PROJECTS visit: codeastro.com -->
+												</div>
 												<div class="form-group row">
-													<label class="col-lg-2 col-form-label">Content</label>
+													<label class="col-lg-2 col-form-label">Contenu</label>
 													<div class="col-lg-9">
 														<textarea class="tinymce form-control" name="content" rows="10" cols="30"></textarea>
 													</div>
@@ -193,86 +192,65 @@ if(isset($_POST['add']))
 											</div>
 											<div class="col-xl-6">
 												<div class="form-group row">
-													<label class="col-lg-3 col-form-label">Property Type</label>
+													<label class="col-lg-3 col-form-label">Type de propriété</label>
 													<div class="col-lg-9">
 														<select class="form-control" required name="ptype">
-															<option value="">Select Type</option>
-															<option value="apartment">Apartment</option>
-															<option value="flat">Flat</option>
-															<option value="building">Building</option>
-															<option value="house">House</option>
-															<option value="villa">Villa</option>
-															<option value="office">Office</option>
+															<option value="">Sélectionner le Type</option>
+															<option value="apartment">Appartement</option>
+															<option value="house">Maison</option>
 														</select>
 													</div>
 												</div>
 												<div class="form-group row">
-													<label class="col-lg-3 col-form-label">Selling Type</label>
+													<label class="col-lg-3 col-form-label">Type de vente</label>
 													<div class="col-lg-9">
 														<select class="form-control" required name="stype">
-															<option value="">Select Status</option>
-															<option value="rent">Rent</option>
-															<option value="sale">Sale</option>
+															<option value="">Sélectionnez le statut</option>
+															<option value="rent">Louer</option>
+															<option value="sale">Vendre</option>
 														</select>
-													</div>
-												</div><!-- FOR MORE PROJECTS visit: codeastro.com -->
-												<div class="form-group row">
-													<label class="col-lg-3 col-form-label">Bathroom</label>
-													<div class="col-lg-9">
-														<input type="text" class="form-control" name="bath" required placeholder="Enter Bathroom (only no 1 to 10)">
 													</div>
 												</div>
 												<div class="form-group row">
-													<label class="col-lg-3 col-form-label">Kitchen</label>
+													<label class="col-lg-3 col-form-label">Salle de bains</label>
 													<div class="col-lg-9">
-														<input type="text" class="form-control" name="kitc" required placeholder="Enter Kitchen (only no 1 to 10)">
+														<input type="text" class="form-control" name="bath" required placeholder="Entrez salle de bain (seulement pas de 1 à 10)">
+													</div>
+												</div>
+												<div class="form-group row">
+													<label class="col-lg-3 col-form-label">Cuisine</label>
+													<div class="col-lg-9">
+														<input type="text" class="form-control" name="kitc" required placeholder="Entrez la cuisine (seulement pas de 1 à 10)">
 													</div>
 												</div>
 												
 											</div>   
-											<div class="col-xl-6">
-												<div class="form-group row mb-3">
-													<label class="col-lg-3 col-form-label">BHK</label>
+												<div class="form-group row">
+													<label class="col-lg-3 col-form-label">Chambre à coucher</label>
 													<div class="col-lg-9">
-														<select class="form-control" required name="bhk">
-															<option value="">Select BHK</option>
-															<option value="1 BHK">1 BHK</option>
-															<option value="2 BHK">2 BHK</option>
-															<option value="3 BHK">3 BHK</option>
-															<option value="4 BHK">4 BHK</option>
-															<option value="5 BHK">5 BHK</option>
-															<option value="1,2 BHK">1,2 BHK</option>
-															<option value="2,3 BHK">2,3 BHK</option>
-															<option value="2,3,4 BHK">2,3,4 BHK</option>
-														</select>
+														<input type="text" class="form-control" name="bed" required placeholder="Entrez la chambre (seulement pas de 1 à 10)">
 													</div>
 												</div>
 												<div class="form-group row">
-													<label class="col-lg-3 col-form-label">Bedroom</label>
+													<label class="col-lg-3 col-form-label">Balcon</label>
 													<div class="col-lg-9">
-														<input type="text" class="form-control" name="bed" required placeholder="Enter Bedroom  (only no 1 to 10)">
-													</div>
-												</div><!-- FOR MORE PROJECTS visit: codeastro.com -->
-												<div class="form-group row">
-													<label class="col-lg-3 col-form-label">Balcony</label>
-													<div class="col-lg-9">
-														<input type="text" class="form-control" name="balc" required placeholder="Enter Balcony  (only no 1 to 10)">
+														<input type="text" class="form-control" name="balc" required placeholder="Entrez Balcon (seulement pas 1 à 10)">
 													</div>
 												</div>
 												<div class="form-group row">
 													<label class="col-lg-3 col-form-label">Hall</label>
 													<div class="col-lg-9">
-														<input type="text" class="form-control" name="hall" required placeholder="Enter Hall  (only no 1 to 10)">
+														<input type="text" class="form-control" name="hall" required placeholder="Entrez Hall  (seulement pas 1 à 10)">
 													</div>
 												</div>
 												
-											</div><!-- FOR MORE PROJECTS visit: codeastro.com -->
+											</div>
 										</div>
-										<h5 class="text-secondary">Price & Location</h5><hr>
+										<h5 class="text-secondary">Prix et emplacement</h5><hr>
 										<div class="row">
 											<div class="col-xl-6">
 												<div class="form-group row">
-													<label class="col-lg-3 col-form-label">Floor</label>
+													<label class="col-lg-3 col-form-label">Etage</label>
 													<div class="col-lg-9">
 														<select class="form-control" required name="floor">
 															<option value="">Select Floor</option>
@@ -302,7 +280,7 @@ if(isset($_POST['add']))
 														<input type="text" class="form-control" name="state" required placeholder="Enter State">
 													</div>
 												</div>
-											</div><!-- FOR MORE PROJECTS visit: codeastro.com -->
+											</div>
 											<div class="col-xl-6">
 												<div class="form-group row">
 													<label class="col-lg-3 col-form-label">Total Floor</label>
@@ -340,7 +318,7 @@ if(isset($_POST['add']))
 													</div>
 												</div>
 												
-											</div><!-- FOR MORE PROJECTS visit: codeastro.com -->
+											</div>
 										</div>
 										
 										<div class="form-group row">
@@ -377,7 +355,7 @@ if(isset($_POST['add']))
 													</div>
 												<!---feature area end---->
 											</textarea>
-											</div><!-- FOR MORE PROJECTS visit: codeastro.com -->
+											</div>
 										</div>
 												
 										<h5 class="text-secondary">Image & Status</h5><hr>
@@ -416,7 +394,7 @@ if(isset($_POST['add']))
 													<label class="col-lg-3 col-form-label">Basement Floor Plan Image</label>
 													<div class="col-lg-9">
 														<input class="form-control" name="fimage1" type="file">
-													</div><!-- FOR MORE PROJECTS visit: codeastro.com -->
+													</div>
 												</div>
 											</div>
 											<div class="col-xl-6">
@@ -451,7 +429,7 @@ if(isset($_POST['add']))
 
 										<hr>
 
-										<div class="row"><!-- FOR MORE PROJECTS visit: codeastro.com -->
+										<div class="row">
 											<div class="col-md-6">
 												<div class="form-group row">
 													<label class="col-lg-3 col-form-label"><b>Is Featured?</b></label>
@@ -487,7 +465,6 @@ if(isset($_POST['add']))
     </div>
 </div>
 <!-- Wrapper End --> 
-<!-- FOR MORE PROJECTS visit: codeastro.com -->
 <!--	Js Link
 ============================================================--> 
 <script src="js/jquery.min.js"></script> 

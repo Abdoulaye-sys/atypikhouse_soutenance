@@ -26,13 +26,13 @@ if(isset($_POST['insert']))
 		$sql="INSERT INTO feedback (uid,fdescription,status) VALUES ('$uid','$content','0')";
 		   $result=mysqli_query($con, $sql);
 		   if($result){
-			   $msg = "<p class='alert alert-success'>Feedback Send Successfully</p> ";
+			   $msg = "<p class='alert alert-success'>Commentaires envoyés avec succès</p> ";
 		   }
 		   else{
-			   $error = "<p class='alert alert-warning'>Feedback Not Send Successfully</p> ";
+			   $error = "<p class='alert alert-warning'>Le commentaire n'a pas été envoyé avec succès</p> ";
 		   }
 	}else{
-		$error = "<p class='alert alert-warning'>Please Fill all the fields</p>";
+		$error = "<p class='alert alert-warning'>Veuillez remplir tous les champs</p>";
 	}
 }								
 ?>
@@ -69,7 +69,7 @@ if(isset($_POST['insert']))
 
 <!--	Title
 	=========================================================-->
-<title>Real Estate PHP</title>
+<title>Atypik House</title>
 </head>
 <body>
 
@@ -96,13 +96,13 @@ if(isset($_POST['insert']))
             <div class="container">
                 <div class="row">
                     <div class="col-md-6">
-                        <h2 class="page-name float-left text-white text-uppercase mt-1 mb-0"><b>Profile</b></h2>
+                        <h2 class="page-name float-left text-white text-uppercase mt-1 mb-0"><b>Mon Profil</b></h2>
                     </div>
                     <div class="col-md-6">
                         <nav aria-label="breadcrumb" class="float-left float-md-right">
                             <ol class="breadcrumb bg-transparent m-0 p-0">
-                                <li class="breadcrumb-item text-white"><a href="#">Home</a></li>
-                                <li class="breadcrumb-item active">Profile</li>
+                                <li class="breadcrumb-item text-white"><a href="#">Accueil</a></li>
+                                <li class="breadcrumb-item active">Profil</li>
                             </ol>
                         </nav>
                     </div>
@@ -117,30 +117,30 @@ if(isset($_POST['insert']))
             <div class="container">
                     <div class="row">
 						<div class="col-lg-12">
-							<h2 class="text-secondary double-down-line text-center">Profile</h2>
+							<h2 class="text-secondary double-down-line text-center">Profil</h2>
                         </div>
 					</div>
                 <div class="dashboard-personal-info p-5 bg-white">
                     <form action="#" method="post">
-                        <h5 class="text-secondary border-bottom-on-white pb-3 mb-4">Feedback Form</h5>
+                        <h5 class="text-secondary border-bottom-on-white pb-3 mb-4">Formulaire de commentaires</h5>
 						<?php echo $msg; ?><?php echo $error; ?>
                         <div class="row">
                             <div class="col-lg-6 col-md-12">
                                 <div class="form-group">
-                                    <label for="user-id">Full Name</label>
-                                    <input type="text" name="name" class="form-control" placeholder="Enter Full Name">
+                                    <label for="user-id">Nom </label>
+                                    <input type="text" name="name" class="form-control" placeholder="Entrez le nom complet">
                                 </div>                
                                 
                                 <div class="form-group">
-                                    <label for="phone">Contact Number</label>
-                                    <input type="number" name="phone"  class="form-control" placeholder="Enter Phone" maxlength="10">
+                                    <label for="phone">Numéro de contact</label>
+                                    <input type="number" name="phone"  class="form-control" placeholder="Entrez le téléphone" maxlength="10">
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="about-me">Your Feedback</label>
-                                    <textarea class="form-control" name="content" rows="7" placeholder="Enter Text Here...."></textarea>
+                                    <label for="about-me">Vos retours</label>
+                                    <textarea class="form-control" name="content" rows="7" placeholder="Entrez le texte ici...."></textarea>
                                 </div>
-                                <input type="submit" class="btn btn-info mb-4" name="insert" value="Send Feedback">
+                                <input type="submit" class="btn btn-info mb-4" name="insert" value="Envoyer des commentaires">
                             </div>
 							</form>
                             <div class="col-lg-1"></div>
@@ -171,7 +171,6 @@ if(isset($_POST['insert']))
             </div>
         </div>
 	<!--	Submit property   -->
-      <!-- FOR MORE PROJECTS visit: codeastro.com -->  
         
         <!--	Footer   start-->
 		<?php include("include/footer.php");?>
@@ -183,7 +182,6 @@ if(isset($_POST['insert']))
     </div>
 </div>
 <!-- Wrapper End --> 
-<!-- FOR MORE PROJECTS visit: codeastro.com -->
 <!--	Js Link
 ============================================================--> 
 <script src="js/jquery.min.js"></script> 

@@ -41,7 +41,7 @@ if(!isset($_SESSION['uemail']))
 
 <!--	Title
 	=========================================================-->
-<title>Real Estate PHP</title>
+<title>Atypik House</title>
 </head>
 <body>
 
@@ -68,13 +68,13 @@ if(!isset($_SESSION['uemail']))
             <div class="container">
                 <div class="row">
                     <div class="col-md-6">
-                        <h2 class="page-name float-left text-white text-uppercase mt-1 mb-0"><b>User Listed Property</b></h2>
+                        <h2 class="page-name float-left text-white text-uppercase mt-1 mb-0"><b>Propriété répertoriée par l'utilisateur</b></h2>
                     </div>
                     <div class="col-md-6">
                         <nav aria-label="breadcrumb" class="float-left float-md-right">
                             <ol class="breadcrumb bg-transparent m-0 p-0">
-                                <li class="breadcrumb-item text-white"><a href="#">Home</a></li>
-                                <li class="breadcrumb-item active">User Listed Property</li>
+                                <li class="breadcrumb-item text-white"><a href="#">Accueil</a></li>
+                                <li class="breadcrumb-item active">Propriété répertoriée par l'utilisateur</li>
                             </ol>
                         </nav>
                     </div>
@@ -86,10 +86,10 @@ if(!isset($_SESSION['uemail']))
 		 
 		<!--	Submit property   -->
         <div class="full-row bg-gray">
-            <div class="container"><!-- FOR MORE PROJECTS visit: codeastro.com -->
+            <div class="container">
                     <div class="row mb-5">
 						<div class="col-lg-12">
-							<h2 class="text-secondary double-down-line text-center">User Listed Property</h2>
+							<h2 class="text-secondary double-down-line text-center">Propriété répertoriée par l'utilisateur</h2>
 							<?php 
 								if(isset($_GET['msg']))	
 								echo $_GET['msg'];	
@@ -99,13 +99,13 @@ if(!isset($_SESSION['uemail']))
 					<table class="items-list col-lg-12 table-hover" style="border-collapse:inherit;">
                         <thead>
                              <tr  class="bg-dark">
-                                <th class="text-white font-weight-bolder">Properties</th>
+                                <th class="text-white font-weight-bolder">Propriétés</th>
                                 <th class="text-white font-weight-bolder">BHK</th>
                                 <th class="text-white font-weight-bolder">Type</th>
-                                <th class="text-white font-weight-bolder">Added Date</th>
-								<th class="text-white font-weight-bolder">Status</th>
-                                <th class="text-white font-weight-bolder">Update</th>
-								<th class="text-white font-weight-bolder">Delete</th>
+                                <th class="text-white font-weight-bolder">Date d'ajout</th>
+								<th class="text-white font-weight-bolder">Statut</th>
+                                <th class="text-white font-weight-bolder">Modifier</th>
+								<th class="text-white font-weight-bolder">Supprimer</th>
                              </tr>
                         </thead>
                         <tbody>
@@ -130,8 +130,8 @@ if(!isset($_SESSION['uemail']))
                                 <td class="text-capitalize">For <?php echo $row['5'];?></td>
                                 <td><?php echo $row['29'];?></td>
 								<td class="text-capitalize"><?php echo $row['24'];?></td>
-                                <td><a class="btn btn-info" href="submitpropertyupdate.php?id=<?php echo $row['0'];?>">Update</a></td>
-								<td><a class="btn btn-danger" href="submitpropertydelete.php?id=<?php echo $row['0'];?>">Delete</a></td>
+                                <td><a class="btn btn-info" href="submitpropertyupdate.php?id=<?php echo $row['0'];?>">Modifier</a></td>
+								<td><a class="btn btn-danger" href="submitpropertydelete.php?id=<?php echo $row['0'];?>">Supprimer</a></td>
                             </tr>
 							<?php } ?>
                         </tbody>
@@ -149,7 +149,7 @@ if(!isset($_SESSION['uemail']))
         <a href="#" class="bg-secondary text-white hover-text-secondary" id="scroll"><i class="fas fa-angle-up"></i></a> 
         <!-- End Scroll To top --> 
     </div>
-</div><!-- FOR MORE PROJECTS visit: codeastro.com -->
+</div>
 <!-- Wrapper End --> 
 
 <!--	Js Link

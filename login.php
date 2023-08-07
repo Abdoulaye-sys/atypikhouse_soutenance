@@ -22,10 +22,10 @@ if(isset($_REQUEST['login']))
 				
 		   }
 		   else{
-			   $error = "<p class='alert alert-warning'>Email or Password doesnot match!</p> ";
+			   $error = "<p class='alert alert-warning'>L'e-mail ou le mot de passe ne correspondent pas!</p> ";
 		   }
 	}else{
-		$error = "<p class='alert alert-warning'>Please Fill all the fields</p>";
+		$error = "<p class='alert alert-warning'>Veuillez remplir tous les champs</p>";
 	}
 }
 ?>
@@ -59,10 +59,9 @@ if(isset($_REQUEST['login']))
 <link rel="stylesheet" type="text/css" href="fonts/flaticon/flaticon.css">
 <link rel="stylesheet" type="text/css" href="css/style.css">
 <link rel="stylesheet" type="text/css" href="css/login.css">
-<!-- FOR MORE PROJECTS visit: codeastro.com -->
 <!--	Title
 	=========================================================-->
-<title>Real Estate PHP</title>
+<title>Atypik House</title>
 </head>
 <body>
 
@@ -112,25 +111,25 @@ if(isset($_REQUEST['login']))
                 	<div class="loginbox">
                         <div class="login-right">
 							<div class="login-right-wrap">
-								<h1>Login</h1>
-								<p class="account-subtitle">Access to our dashboard</p>
+								<h1>Connexion</h1>
+								<p class="account-subtitle">Accéder à notre tableau de bord</p>
 								<?php echo $error; ?><?php echo $msg; ?>
 								<!-- Form -->
 								<form method="post">
 									<div class="form-group">
-										<input type="email"  name="email" class="form-control" placeholder="Your Email*">
+										<input type="email"  name="email" class="form-control" placeholder="Votre Email*">
 									</div>
 									<div class="form-group">
-										<input type="password" name="pass"  class="form-control" placeholder="Your Password">
+										<input type="password" name="pass"  class="form-control" placeholder="Votre Mot de Passe*">
 									</div>
 									
-										<button class="btn btn-success" name="login" value="Login" type="submit">Login</button>
+										<button class="btn btn-success" name="login" value="Login" type="submit">connexion</button>
 									
 								</form>
 								
 								<div class="login-or">
 									<span class="or-line"></span>
-									<span class="span-or">or</span>
+									<span class="span-or">OU</span>
 								</div>
 								<!-- Social Login -->
 								<!-- <div class="social-login">
@@ -142,7 +141,7 @@ if(isset($_REQUEST['login']))
 								</div> -->
 								<!-- /Social Login -->
 								
-								<div class="text-center dont-have">Don't have an account? <a href="register.php">Register</a></div>
+								<div class="text-center dont-have">Vous n'avez pas de compte? <a href="register.php">Inscription</a></div>
 								
 							</div>
                         </div>
@@ -153,7 +152,7 @@ if(isset($_REQUEST['login']))
 	<!--	login  -->
         
         
-        <!--	Footer   start--><!-- FOR MORE PROJECTS visit: codeastro.com -->
+        <!--	Footer   start-->
 		<?php include("include/footer.php");?>
 		<!--	Footer   start-->
         

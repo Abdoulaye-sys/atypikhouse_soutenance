@@ -20,7 +20,7 @@ if(isset($_REQUEST['reg']))
 	
 	if($num == 1)
 	{
-		$error = "<p class='alert alert-warning'>Email Id already Exist</p> ";
+		$error = "<p class='alert alert-warning'>L'identifiant de messagerie existe déjà</p> ";
 	}
 	else
 	{
@@ -32,13 +32,13 @@ if(isset($_REQUEST['reg']))
 			$result=mysqli_query($con, $sql);
 			move_uploaded_file($temp_name1,"admin/user/$uimage");
 			   if($result){
-				   $msg = "<p class='alert alert-success'>Register Successfully</p> ";
+				   $msg = "<p class='alert alert-success'>Votre Compte a bien été crée</p> ";
 			   }
 			   else{
-				   $error = "<p class='alert alert-warning'>Register Not Successfully</p> ";
+				   $error = "<p class='alert alert-warning'>Votre Compte n'a pas été crée</p> ";
 			   }
 		}else{
-			$error = "<p class='alert alert-warning'>Please Fill all the fields</p>";
+			$error = "<p class='alert alert-warning'>Veuillez remplir tous les champs</p>";
 		}
 	}
 	
@@ -46,7 +46,6 @@ if(isset($_REQUEST['reg']))
 ?>
 <!DOCTYPE html>
 <html lang="en">
-<!-- FOR MORE PROJECTS visit: codeastro.com -->
 <head>
 <!-- Required meta tags -->
 <meta charset="utf-8">
@@ -77,7 +76,7 @@ if(isset($_REQUEST['reg']))
 
 <!--	Title
 	=========================================================-->
-<title>Real Estate PHP</title>
+<title>Atypik House</title>
 </head>
 <body>
 
@@ -97,7 +96,7 @@ if(isset($_REQUEST['reg']))
     <div class="row"> 
         <!--	Header start  -->
 		<?php include("include/header.php");?>
-        <!--	Header end  --><!-- FOR MORE PROJECTS visit: codeastro.com -->
+        <!--	Header end  -->
         
         <!--	Banner   --->
         <!-- <div class="banner-full-row page-banner" style="background-image:url('images/breadcromb.jpg');">
@@ -127,29 +126,29 @@ if(isset($_REQUEST['reg']))
                 	<div class="loginbox">
                         <div class="login-right">
 							<div class="login-right-wrap">
-								<h1>Register</h1>
-								<p class="account-subtitle">Access to our dashboard</p>
+								<h1>Inscription</h1>
+								<p class="account-subtitle">Accéder à notre tableau de bord</p>
 								<?php echo $error; ?><?php echo $msg; ?>
 								<!-- Form -->
 								<form method="post" enctype="multipart/form-data">
 									<div class="form-group">
-										<input type="text"  name="name" class="form-control" placeholder="Your Name*">
+										<input type="text"  name="name" class="form-control" placeholder="Votre Nom*">
 									</div>
 									<div class="form-group">
-										<input type="email"  name="email" class="form-control" placeholder="Your Email*">
+										<input type="email"  name="email" class="form-control" placeholder="Votre Email*">
 									</div>
 									<div class="form-group">
-										<input type="text"  name="phone" class="form-control" placeholder="Your Phone*" maxlength="10">
+										<input type="text"  name="phone" class="form-control" placeholder="Votre Téléphone*" maxlength="10">
 									</div>
 									<div class="form-group">
-										<input type="password" name="pass"  class="form-control" placeholder="Your Password*">
+										<input type="password" name="pass"  class="form-control" placeholder="Votre Mot de Passe*">
 									</div>
 
 									 <div class="form-check-inline">
 									  <label class="form-check-label">
-										<input type="radio" class="form-check-input" name="utype" value="user" checked>User
+										<input type="radio" class="form-check-input" name="utype" value="user" checked>Utilisateur
 									  </label>
-									</div><!-- FOR MORE PROJECTS visit: codeastro.com -->
+									</div>
 									<div class="form-check-inline">
 									  <label class="form-check-label">
 										<input type="radio" class="form-check-input" name="utype" value="agent">Agent
@@ -157,22 +156,22 @@ if(isset($_REQUEST['reg']))
 									</div>
 									<div class="form-check-inline disabled">
 									  <label class="form-check-label">
-										<input type="radio" class="form-check-input" name="utype" value="builder">Builder
+										<input type="radio" class="form-check-input" name="utype" value="builder">Entrepreneur
 									  </label>
 									</div> 
 									
 									<div class="form-group">
-										<label class="col-form-label"><b>User Image</b></label>
+										<label class="col-form-label"><b>Image de l'utilisateur </b></label>
 										<input class="form-control" name="uimage" type="file">
 									</div>
 									
-									<button class="btn btn-success" name="reg" value="Register" type="submit">Register</button>
+									<button class="btn btn-success" name="reg" value="Register" type="submit">Inscription</button>
 									
 								</form>
 								
 								<div class="login-or">
 									<span class="or-line"></span>
-									<span class="span-or">or</span>
+									<span class="span-or">ou</span>
 								</div>
 								
 								<!-- Social Login -->
@@ -185,9 +184,9 @@ if(isset($_REQUEST['reg']))
 								</div> -->
 								<!-- /Social Login -->
 								
-								<div class="text-center dont-have">Already have an account? <a href="login.php">Login</a></div>
+								<div class="text-center dont-have">Vous avez déjà un compte? <a href="login.php">Connexion</a></div>
 								
-							</div><!-- FOR MORE PROJECTS visit: codeastro.com -->
+							</div>
                         </div>
                     </div>
                 </div>
@@ -206,7 +205,6 @@ if(isset($_REQUEST['reg']))
     </div>
 </div>
 <!-- Wrapper End --> 
-<!-- FOR MORE PROJECTS visit: codeastro.com -->
 <!--	Js Link
 ============================================================--> 
 <script src="js/jquery.min.js"></script> 
