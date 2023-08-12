@@ -206,8 +206,8 @@ if(isset($_POST['add']))
 													<div class="col-lg-9">
 														<select class="form-control" required name="stype">
 															<option value="">Sélectionnez le statut</option>
-															<option value="rent">Louer</option>
-															<option value="sale">Vendre</option>
+															<option value="louer">Louer</option>
+															<option value="vente">Vendre</option>
 														</select>
 													</div>
 												</div>
@@ -221,6 +221,22 @@ if(isset($_POST['add']))
 													<label class="col-lg-3 col-form-label">Cuisine</label>
 													<div class="col-lg-9">
 														<input type="text" class="form-control" name="kitc" required placeholder="Entrez la cuisine (seulement pas de 1 à 10)">
+													</div>
+												</div>
+												<div class="form-group row mb-3">
+													<label class="col-lg-3 col-form-label">BHK</label>
+													<div class="col-lg-9">
+														<select class="form-control" required name="bhk">
+															<option value="">Sélectionnez BHK</option>
+															<option value="1 BHK">1 BHK</option>
+															<option value="2 BHK">2 BHK</option>
+															<option value="3 BHK">3 BHK</option>
+															<option value="4 BHK">4 BHK</option>
+															<option value="5 BHK">5 BHK</option>
+															<option value="1,2 BHK">1,2 BHK</option>
+															<option value="2,3 BHK">2,3 BHK</option>
+															<option value="2,3,4 BHK">2,3,4 BHK</option>
+														</select>
 													</div>
 												</div>
 												
@@ -253,68 +269,68 @@ if(isset($_POST['add']))
 													<label class="col-lg-3 col-form-label">Etage</label>
 													<div class="col-lg-9">
 														<select class="form-control" required name="floor">
-															<option value="">Select Floor</option>
-															<option value="1st Floor">1st Floor</option>
-															<option value="2nd Floor">2nd Floor</option>
-															<option value="3rd Floor">3rd Floor</option>
-															<option value="4th Floor">4th Floor</option>
-															<option value="5th Floor">5th Floor</option>
+															<option value="">Sélectionner un étage</option>
+															<option value="1st Floor">1er étage</option>
+															<option value="2nd Floor">2e Étage</option>
+															<option value="3rd Floor">3e étage</option>
+															<option value="4th Floor">4e étage</option>
+															<option value="5th Floor">5e étage</option>
 														</select>
 													</div>
 												</div>
 												<div class="form-group row">
-													<label class="col-lg-3 col-form-label">Price</label>
+													<label class="col-lg-3 col-form-label">prix</label>
 													<div class="col-lg-9">
-														<input type="text" class="form-control" name="price" required placeholder="Enter Price">
+														<input type="text" class="form-control" name="price" required placeholder="Entrer le prix">
 													</div>
 												</div>
 												<div class="form-group row">
-													<label class="col-lg-3 col-form-label">City</label>
+													<label class="col-lg-3 col-form-label">ville</label>
 													<div class="col-lg-9">
-														<input type="text" class="form-control" name="city" required placeholder="Enter City">
+														<input type="text" class="form-control" name="city" required placeholder="Entrez la ville">
 													</div>
 												</div>
 												<div class="form-group row">
-													<label class="col-lg-3 col-form-label">State</label>
+													<label class="col-lg-3 col-form-label">état</label>
 													<div class="col-lg-9">
-														<input type="text" class="form-control" name="state" required placeholder="Enter State">
+														<input type="text" class="form-control" name="state" required placeholder="Entrer l’état">
 													</div>
 												</div>
 											</div>
 											<div class="col-xl-6">
 												<div class="form-group row">
-													<label class="col-lg-3 col-form-label">Total Floor</label>
+													<label class="col-lg-3 col-form-label">sol totale</label>
 													<div class="col-lg-9">
 														<select class="form-control" required name="totalfl">
-															<option value="">Select Floor</option>
-															<option value="1 Floor">1 Floor</option>
-															<option value="2 Floor">2 Floor</option>
-															<option value="3 Floor">3 Floor</option>
-															<option value="4 Floor">4 Floor</option>
-															<option value="5 Floor">5 Floor</option>
-															<option value="6 Floor">6 Floor</option>
-															<option value="7 Floor">7 Floor</option>
-															<option value="8 Floor">8 Floor</option>
-															<option value="9 Floor">9 Floor</option>
-															<option value="10 Floor">10 Floor</option>
-															<option value="11 Floor">11 Floor</option>
-															<option value="12 Floor">12 Floor</option>
-															<option value="13 Floor">13 Floor</option>
-															<option value="14 Floor">14 Floor</option>
-															<option value="15 Floor">15 Floor</option>
+															<option value="">Sélectionner un étage</option>
+															<option value="1 Floor">1 étage</option>
+															<option value="2 Floor">2 étage</option>
+															<option value="3 Floor">3 étage</option>
+															<option value="4 Floor">4 étage</option>
+															<option value="5 Floor">5 étage</option>
+															<option value="6 Floor">6 étage</option>
+															<option value="7 Floor">7 étage</option>
+															<option value="8 Floor">8 étage</option>
+															<option value="9 Floor">9 étage</option>
+															<option value="10 Floor">10 étage</option>
+															<option value="11 Floor">11 étage</option>
+															<option value="12 Floor">12 étage</option>
+															<option value="13 Floor">13 étage</option>
+															<option value="14 Floor">14 étage</option>
+															<option value="15 Floor">15 étage</option>
 														</select>
 													</div>
 												</div>
 												<div class="form-group row">
-													<label class="col-lg-3 col-form-label">Area Size</label>
+													<label class="col-lg-3 col-form-label">taille de surface</label>
 													<div class="col-lg-9">
-														<input type="text" class="form-control" name="asize" required placeholder="Enter Area Size (in sqrt)">
+														<input type="text" class="form-control" name="asize" required placeholder="Entrez la taille de la zone (en m²)">
 													</div>
 												</div>
 												<div class="form-group row">
-													<label class="col-lg-3 col-form-label">Address</label>
+													<label class="col-lg-3 col-form-label">adresse</label>
 													<div class="col-lg-9">
-														<input type="text" class="form-control" name="loc" required placeholder="Enter Address">
+														<input type="text" class="form-control" name="loc" required placeholder="entrer l'adresse">
 													</div>
 												</div>
 												
@@ -322,35 +338,35 @@ if(isset($_POST['add']))
 										</div>
 										
 										<div class="form-group row">
-											<label class="col-lg-2 col-form-label">Feature</label>
+											<label class="col-lg-2 col-form-label">fonctionnalité</label>
 											<div class="col-lg-9">
-											<p class="alert alert-danger">* Important Please Do Not Remove Below Content Only Change <b>Yes</b> Or <b>No</b> or Details and Do Not Add More Details</p>
+											<p class="alert alert-danger">* Important Veuillez ne pas supprimer le contenu ci-dessous Modifier uniquement Oui ou Non ou Détails et ne pas ajouter plus de détails</p>
 											
 											<textarea class="tinymce form-control" name="feature" rows="10" cols="30">
 												<!---feature area start--->
 												<div class="col-md-4">
 														<ul>
-														<li class="mb-3"><span class="text-secondary font-weight-bold">Property Age : </span>10 Years</li>
-														<li class="mb-3"><span class="text-secondary font-weight-bold">Swiming Pool : </span>Yes</li>
+														<li class="mb-3"><span class="text-secondary font-weight-bold">Âge de la propriété : </span>10 Years</li>
+														<li class="mb-3"><span class="text-secondary font-weight-bold">Piscine : </span>Yes</li>
 														<li class="mb-3"><span class="text-secondary font-weight-bold">Parking : </span>Yes</li>
-														<li class="mb-3"><span class="text-secondary font-weight-bold">GYM : </span>Yes</li>
+														<li class="mb-3"><span class="text-secondary font-weight-bold">salle de gym : </span>Yes</li>
 														</ul>
 													</div>
 													<div class="col-md-4">
 														<ul>
-														<li class="mb-3"><span class="text-secondary font-weight-bold">Type : </span>Apartment</li>
+														<li class="mb-3"><span class="text-secondary font-weight-bold">Type de propriété : </span>Apartment</li>
 														<li class="mb-3"><span class="text-secondary font-weight-bold">Security : </span>Yes</li>
-														<li class="mb-3"><span class="text-secondary font-weight-bold">Dining Capacity : </span>10 People</li>
-														<li class="mb-3"><span class="text-secondary font-weight-bold">Church/Temple  : </span>No</li>
+														<li class="mb-3"><span class="text-secondary font-weight-bold">Capacité de restauration : </span>10 People</li>
+														<li class="mb-3"><span class="text-secondary font-weight-bold">Église/temple : </span>No</li>
 														
 														</ul>
 													</div>
 													<div class="col-md-4">
 														<ul>
-														<li class="mb-3"><span class="text-secondary font-weight-bold">3rd Party : </span>No</li>
-														<li class="mb-3"><span class="text-secondary font-weight-bold">Elevator : </span>Yes</li>
+														<li class="mb-3"><span class="text-secondary font-weight-bold">Tiers : </span>No</li>
+														<li class="mb-3"><span class="text-secondary font-weight-bold">ascenseur :  </span>Yes</li>
 														<li class="mb-3"><span class="text-secondary font-weight-bold">CCTV : </span>Yes</li>
-														<li class="mb-3"><span class="text-secondary font-weight-bold">Water Supply : </span>Ground Water / Tank</li>
+														<li class="mb-3"><span class="text-secondary font-weight-bold">Approvisionnement en eau : </span>Ground Eau / réservoir</li>
 														</ul>
 													</div>
 												<!---feature area end---->
@@ -381,17 +397,17 @@ if(isset($_POST['add']))
 													</div>
 												</div>
 												<div class="form-group row">
-													<label class="col-lg-3 col-form-label">Status</label>
+													<label class="col-lg-3 col-form-label">statut</label>
 													<div class="col-lg-9">
 														<select class="form-control"  required name="status">
-															<option value="">Select Status</option>
-															<option value="available">Available</option>
-															<option value="sold out">Sold Out</option>
+															<option value="">sélectionner le statut</option>
+															<option value="disponible">disponible</option>
+															<option value="vendu">vendu</option>
 														</select>
 													</div>
 												</div>
 												<div class="form-group row">
-													<label class="col-lg-3 col-form-label">Basement Floor Plan Image</label>
+													<label class="col-lg-3 col-form-label">Image du plan d’étage</label>
 													<div class="col-lg-9">
 														<input class="form-control" name="fimage1" type="file">
 													</div>
@@ -413,13 +429,13 @@ if(isset($_POST['add']))
 												</div>
 												
 												<div class="form-group row">
-													<label class="col-lg-3 col-form-label">Floor Plan Image</label>
+													<label class="col-lg-3 col-form-label">Image du plan d’étage</label>
 													<div class="col-lg-9">
 														<input class="form-control" name="fimage" type="file">
 													</div>
 												</div>
 												<div class="form-group row">
-													<label class="col-lg-3 col-form-label">Ground Floor Plan Image</label>
+													<label class="col-lg-3 col-form-label">Image du plan du rez-de-chaussée</label>
 													<div class="col-lg-9">
 														<input class="form-control" name="fimage2" type="file">
 													</div>
@@ -432,12 +448,12 @@ if(isset($_POST['add']))
 										<div class="row">
 											<div class="col-md-6">
 												<div class="form-group row">
-													<label class="col-lg-3 col-form-label"><b>Is Featured?</b></label>
+													<label class="col-lg-3 col-form-label"><b>est en vedette?</b></label>
 													<div class="col-lg-9">
 														<select class="form-control" required name="isFeatured">
-															<option value="">Select...</option>
-															<option value="0">No</option>
-															<option value="1">Yes</option>
+															<option value="">Selectionner</option>
+															<option value="0">Non</option>
+															<option value="1">Oui</option>
 														</select>
 													</div>
 												</div>
@@ -445,7 +461,7 @@ if(isset($_POST['add']))
 										</div>
 
 										
-											<input type="submit" value="Submit Property" class="btn btn-info"name="add" style="margin-left:200px;">
+											<input type="submit" value="Soumettre la propriété" class="btn btn-info"name="add" style="margin-left:200px;">
 										
 								</div>
 								</form>

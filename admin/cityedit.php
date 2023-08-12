@@ -21,17 +21,17 @@ if(isset($_POST['insert']))
 		$result=mysqli_query($con,$sql);
 		if($result)
 			{
-				$msg="<p class='alert alert-success'>City Updated</p>";
+				$msg="<p class='alert alert-success'>Ville mise à jour</p>";
 				header("Location:cityadd.php?msg=$msg");
 			}
 			else
 			{
-				$msg="<p class='alert alert-warning'>City Not Updated</p>";
+				$msg="<p class='alert alert-warning'>Ville non mise à jour</p>";
 				header("Location:cityadd.php?msg=$msg");
 			}
 	}
 	else{
-		$error = "<p class='alert alert-warning'>* Please Fill all the Fields</p>";
+		$error = "<p class='alert alert-warning'>* Veuillez remplir tous les champs</p>";
 	}
 	
 }
@@ -42,7 +42,7 @@ if(isset($_POST['insert']))
 <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
-        <title>Ventura - Data Tables</title>
+        <title>Atypik House - tables de données</title>
 		
 		<!-- Favicon -->
         <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
@@ -87,10 +87,10 @@ if(isset($_POST['insert']))
 					<div class="page-header">
 						<div class="row">
 							<div class="col">
-								<h3 class="page-title">State</h3>
+								<h3 class="page-title">État</h3>
 								<ul class="breadcrumb">
-									<li class="breadcrumb-item"><a href="dashboard.php">Dashboard</a></li>
-									<li class="breadcrumb-item active">State</li>
+									<li class="breadcrumb-item"><a href="dashboard.php">Tableau de bord</a></li>
+									<li class="breadcrumb-item active">État</li>
 								</ul>
 							</div>
 						</div>
@@ -102,7 +102,7 @@ if(isset($_POST['insert']))
 						<div class="col-md-12">
 							<div class="card">
 								<div class="card-header">
-									<h1 class="card-title">Add City</h1>
+									<h1 class="card-title">Ajouter une ville</h1>
 									<?php echo $error;?>
 									<?php echo $msg;?>
 									<?php 
@@ -121,12 +121,12 @@ if(isset($_POST['insert']))
 									<div class="card-body">
 											<div class="row">
 												<div class="col-xl-6">
-													<h5 class="card-title">City Details</h5>
+													<h5 class="card-title">Détails de la ville</h5>
 													<div class="form-group row">
-														<label class="col-lg-3 col-form-label">State Name</label>
+														<label class="col-lg-3 col-form-label">Nom d'état</label>
 														<div class="col-lg-9" >	
 															<select class="form-control" name="ustate">
-																<option value="">Select</option>
+																<option value="">Sélectionner</option>
 																<?php
 																		$query1=mysqli_query($con,"select * from state");
 																		while($row1=mysqli_fetch_row($query1))
@@ -139,7 +139,7 @@ if(isset($_POST['insert']))
 														</div>
 													</div>
 													<div class="form-group row">
-														<label class="col-lg-3 col-form-label">City Name</label>
+														<label class="col-lg-3 col-form-label">Nom de Ville</label>
 														<div class="col-lg-9">
 															<input type="text" class="form-control" name="ucity" value="<?php echo $row['1']; ?>">
 														</div>
@@ -147,7 +147,7 @@ if(isset($_POST['insert']))
 												</div>
 											</div>
 											<div class="text-left">
-												<input type="submit" class="btn btn-primary"  value="Submit" name="insert" style="margin-left:200px;">
+												<input type="submit" class="btn btn-primary"  value="Soumettre" name="insert" style="margin-left:200px;">
 											</div>
 									</div>
 								</form>

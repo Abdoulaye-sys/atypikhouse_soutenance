@@ -17,12 +17,12 @@ if(isset($_POST['insert']))
 	$result=mysqli_query($con,$sql);
 	if($result)
 		{
-			$msg="<p class='alert alert-success'>State Updated</p>";
+			$msg="<p class='alert alert-success'>État mis à jour</p>";
 			header("Location:stateadd.php?msg=$msg");
 		}
 		else
 		{
-			$msg="<p class='alert alert-warning'>State Not Updated</p>";
+			$msg="<p class='alert alert-warning'>État non mis à jour</p>";
 			header("Location:stateadd.php?msg=$msg");
 		}	
 }
@@ -33,7 +33,7 @@ if(isset($_POST['insert']))
 <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
-        <title>Ventura - Data Tables</title>
+        <title>Atypik House - tables de données</title>
 		
 		<!-- Favicon -->
         <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
@@ -78,10 +78,10 @@ if(isset($_POST['insert']))
 					<div class="page-header">
 						<div class="row">
 							<div class="col">
-								<h3 class="page-title">State</h3>
+								<h3 class="page-title">État</h3>
 								<ul class="breadcrumb">
-									<li class="breadcrumb-item"><a href="dashboard.php">Dashboard</a></li>
-									<li class="breadcrumb-item active">State</li>
+									<li class="breadcrumb-item"><a href="dashboard.php">Tableau de bord</a></li>
+									<li class="breadcrumb-item active">État</li>
 								</ul>
 							</div>
 						</div>
@@ -93,7 +93,7 @@ if(isset($_POST['insert']))
 						<div class="col-md-12">
 							<div class="card">
 								<div class="card-header">
-									<h1 class="card-title">Add State</h1>
+									<h1 class="card-title">Ajouter un état</h1>
 									
 								</div>
 								<?php 
@@ -107,9 +107,9 @@ if(isset($_POST['insert']))
 									<div class="card-body">
 											<div class="row">
 												<div class="col-xl-6">
-													<h5 class="card-title">State Details</h5>
+													<h5 class="card-title">Détails de l'état</h5>
 													<div class="form-group row">
-														<label class="col-lg-3 col-form-label">State Name</label>
+														<label class="col-lg-3 col-form-label">Nom d'état</label>
 														<div class="col-lg-9">
 															<input type="text" class="form-control" name="ustate" value="<?php echo $row['1']; ?>">
 														</div>
@@ -117,7 +117,7 @@ if(isset($_POST['insert']))
 												</div>
 											</div>
 											<div class="text-left">
-												<input type="submit" class="btn btn-primary"  value="Submit" name="insert" style="margin-left:200px;">
+												<input type="submit" class="btn btn-primary"  value="Soumettre" name="insert" style="margin-left:200px;">
 											</div>
 									</div>
 								</form>

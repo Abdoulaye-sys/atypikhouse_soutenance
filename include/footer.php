@@ -39,13 +39,13 @@
                                             <div class="footer-widget">
                                                 <h4 class="widget-title text-white double-down-line-left position-relative">Contactez-nous</h4>
                                                 <ul class="text-white">
-                                                    <li class="hover-text-primary"><i class="fas fa-map-marker-alt text-white mr-2 font-13 mt-1"></i>11 allée des alpes , Villiers</li>
-                                                    <li class="hover-text-primary"> <i class="fas fa-phone-alt text-white mr-2 font-13 mt-1"></i>+1 234-567-8910</li>
-													<li class="hover-text-primary"> <i class="fas fa-phone-alt text-white mr-2 font-13 mt-1"></i>+1 243-765-4321</li>
+                                                    <li class="hover-text-primary"><i class="fas fa-map-marker-alt text-white mr-2 font-13 mt-1"></i>11 allée des alpes , Villiers-sur-Marne</li>
+                                                    <li class="hover-text-primary"> <i class="fas fa-phone-alt text-white mr-2 font-13 mt-1"></i>77549672365</li>
+													<li class="hover-text-primary"> <i class="fas fa-phone-alt text-white mr-2 font-13 mt-1"></i>77549682303</li>
                                                     <li class="hover-text-primary"><i class="fas fa-envelope text-white mr-2 font-13 mt-1"></i>support@atypikhouse.com</li>
                                                 </ul>
                                             </div>
-                                            <div class="footer-widget media-widget mt-4 text-white hover-text-primary"> <a href="#"><i class="fab fa-facebook-f"></i></a> <a href="#"><i class="fab fa-twitter"></i></a> <a href="#"><i class="fab fa-google-plus-g"></i></a> <a href="#"><i class="fab fa-linkedin-in"></i></a> <a href="#"><i class="fas fa-rss"></i></a> </div>
+                                            <div class="footer-widget media-widget mt-4 text-white hover-text-primary"> <a href=""><i class="fab fa-facebook-f"></i></a> <a href="https://twitter.com/i/flow/login?redirect_after_login=%2Fatypikhome"><i class="fab fa-twitter"></i></a> <a href="#"><i class="fab fa-google-plus-g"></i></a> <a href="#"><i class="fab fa-linkedin-in"></i></a> <a href="#"><i class="fas fa-rss"></i></a> </div>
                                         </div>
                                     </div>
                                 </div>

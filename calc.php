@@ -98,43 +98,43 @@ if(isset($_REQUEST['calc']))
             <div class="container">
                     <div class="row mb-5">
 						<div class="col-lg-12">
-							<h2 class="text-secondary double-down-line text-center">EMI Calculator</h2>
+							<h2 class="text-secondary double-down-line text-center">Calculateur EMI</h2>
                         </div>
 					</div>
 					<center>
 					<table class="items-list col-lg-6 table-hover" style="border-collapse:inherit;">
                         <thead>
                              <tr  class="bg-secondary">
-                                <th class="text-white font-weight-bolder">Term</th>
-                                <th class="text-white font-weight-bolder">Amount</th>
+                                <th class="text-white font-weight-bolder">mandat</th>
+                                <th class="text-white font-weight-bolder">montant</th>
                              </tr>
                         </thead>
                         <tbody>
 						
 						
                             <tr class="text-center font-18">
-                                <td><b>Amount</b></td>
-                                <td><b><?php echo '$'.$amount ; ?></b></td>
+                                <td><b>Somme</b></td>
+                                <td><b><?php echo $amount. '€' ; ?></b></td>
                             </tr>
 							<tr class="text-center">
-                                <td><b>Total Duration</b></td>
-                                <td><b><?php echo $mon.' Months' ; ?></b></td>
+                                <td><b>durée totale</b></td>
+                                <td><b><?php echo $mon.' Mois' ; ?></b></td>
                             </tr>
 							<tr class="text-center">
-                                <td><b>Interest Rate</b></td>
+                                <td><b>taux d'intérêt</b></td>
                                 <td><b><?php echo $int.'%' ; ?></b></td>
                             </tr>
 							<tr class="text-center">
-                                <td><b>Total Interest</b></td>
-                                <td><b><?php echo '$'.$interest ; ?></b></td>
+                                <td><b>total des intérêts</b></td>
+                                <td><b><?php echo $interest. '€' ; ?></b></td>
                             </tr>
 							<tr class="text-center">
-                                <td><b>Total Amount</b></td>
-                                <td><b><?php echo '$'.$pay ; ?></b></td>
+                                <td><b>montant total</b></td>
+                                <td><b><?php echo $pay. '€' ; ?></b></td>
                             </tr>
 							<tr class="text-center">
-                                <td><b>Pay Per Month (EMI)</b></td>
-                                <td><b><?php echo '$'.$month ; ?></b></td>
+                                <td><b>Paiement par mois (EMI)</b></td>
+                                <td><b><?php echo $month. '€' ; ?></b></td>
                             </tr>
 							
                         </tbody>

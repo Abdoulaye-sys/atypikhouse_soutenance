@@ -13,10 +13,10 @@ if(!isset($_SESSION['auser']))
 				<!-- Logo -->
                 <div class="header-left">
                     <a href="dashboard.php" class="logo">
-						<img src="assets/img/rsadmin.png" alt="Logo">
+						<img src="assets/img/rsadmin1.png" alt="Logo">
 					</a>
 					<a href="dashboard.php" class="logo logo-small">
-						<img src="assets/img/logo-small.png" alt="Logo" width="30" height="30">
+						<img src="assets/img/rsadmin1.png" alt="Logo" width="30" height="30">
 					</a>
                 </div>
 				<!-- /Logo -->
@@ -51,11 +51,11 @@ if(!isset($_SESSION['auser']))
 								</div>
 								<div class="user-text">
 									<h6><?php echo $_SESSION['auser'];?></h6>
-									<p class="text-muted mb-0">Administrator</p>
+									<p class="text-muted mb-0">Administrateur</p>
 								</div>
 							</div>
-							<a class="dropdown-item" href="profile.php">Profile</a>
-							<a class="dropdown-item" href="logout.php">Logout</a>
+							<a class="dropdown-item" href="profile.php">Profil</a>
+							<a class="dropdown-item" href="logout.php">Deconnexion</a>
 						</div>
 					</li>
 
@@ -76,10 +76,10 @@ if(!isset($_SESSION['auser']))
 					<div id="sidebar-menu" class="sidebar-menu">
 						<ul>
 							<li class="menu-title"> 
-								<span>Main</span>
+								<span>Principal</span>
 							</li>
 							<li> 
-								<a href="dashboard.php"><i class="fe fe-home"></i> <span>Dashboard</span></a>
+								<a href="dashboard.php"><i class="fe fe-home"></i> <span>Tableau de bord</span></a>
 							</li>
 							
 							<!-- <li class="menu-title"> 
@@ -95,39 +95,39 @@ if(!isset($_SESSION['auser']))
 								</ul>
 							</li> -->
 							<li class="menu-title"> 
-								<span>All Users</span>
+								<span>Tous les Utilisateurs</span>
 							</li>
 						
 							<li class="submenu">
-								<a href="#"><i class="fe fe-user"></i> <span> All Users </span> <span class="menu-arrow"></span></a>
+								<a href="#"><i class="fe fe-user"></i> <span> Tous les Utilisateurs </span> <span class="menu-arrow"></span></a>
 								<ul style="display: none;">
-									<li><a href="adminlist.php"> Admin </a></li>
-									<li><a href="userlist.php"> Users </a></li>
+									<li><a href="adminlist.php"> Administrateur </a></li>
+									<li><a href="userlist.php"> utilisateur </a></li>
 									<li><a href="useragent.php"> Agent </a></li>
-									<li><a href="userbuilder.php"> Builder </a></li>
+									<li><a href="userbuilder.php"> Constructeur </a></li>
 								</ul>
 							</li>
 
 							<li class="menu-title"> 
-								<span>State & City</span>
+								<span>Pays & Ville</span>
 							</li>
 						
 							<li class="submenu">
-								<a href="#"><i class="fe fe-location"></i> <span>State & City</span> <span class="menu-arrow"></span></a>
+								<a href="#"><i class="fe fe-location"></i> <span>Pays & Ville</span> <span class="menu-arrow"></span></a>
 								<ul style="display: none;">
-									<li><a href="stateadd.php"> State </a></li>
-									<li><a href="cityadd.php"> City </a></li>
+									<li><a href="stateadd.php"> Pays </a></li>
+									<li><a href="cityadd.php"> Ville </a></li>
 								</ul>
 							</li>
 						
 							<li class="menu-title"> 
-								<span>Property Management</span>
+								<span>gestion des biens</span>
 							</li>
 							<li class="submenu">
-								<a href="#"><i class="fe fe-map"></i> <span> Property</span> <span class="menu-arrow"></span></a>
+								<a href="#"><i class="fe fe-map"></i> <span> propriété</span> <span class="menu-arrow"></span></a>
 								<ul style="display: none;">
-									<li><a href="propertyadd.php"> Add Property</a></li>
-									<li><a href="propertyview.php"> View Property </a></li>
+									<li><a href="propertyadd.php"> Ajouter une propriété</a></li>
+									<li><a href="propertyview.php"> Voir la propriété </a></li>
 									
 								</ul>
 							</li>
@@ -135,23 +135,23 @@ if(!isset($_SESSION['auser']))
 							
 							
 							<li class="menu-title"> 
-								<span>Query</span>
+								<span>requête</span>
 							</li>
 							<li class="submenu">
-								<a href="#"><i class="fe fe-comment"></i> <span> Contact,Feedback </span> <span class="menu-arrow"></span></a>
+								<a href="#"><i class="fe fe-comment"></i> <span> Personne, ommentaires </span> <span class="menu-arrow"></span></a>
 								<ul style="display: none;">
-									<li><a href="contactview.php"> Contact </a></li>
-									<li><a href="feedbackview.php"> Feedback </a></li>
+									<li><a href="contactview.php"> contact </a></li>
+									<li><a href="feedbackview.php"> commentaire </a></li>
 								</ul>
 							</li>
 							<li class="menu-title"> 
-								<span>About</span>
+								<span>A propos</span>
 							</li>
 							<li class="submenu">
-								<a href="#"><i class="fe fe-browser"></i> <span> About Page </span> <span class="menu-arrow"></span></a>
+								<a href="#"><i class="fe fe-browser"></i> <span> page À propos </span> <span class="menu-arrow"></span></a>
 								<ul style="display: none;">
-									<li><a href="aboutadd.php"> Add About Content </a></li>
-									<li><a href="aboutview.php"> View About </a></li>
+									<li><a href="aboutadd.php"> Ajouter du contenu à propos </a></li>
+									<li><a href="aboutview.php"> Voir le contenu à propos </a></li>
 								</ul>
 							</li>
 							

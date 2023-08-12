@@ -21,10 +21,10 @@
 			}
 			else
 			{
-				$error='* Invalid User Name and Password';
+				$error='* Nom d’utilisateur et mot de passe invalides';
 			}
 		}else{
-			$error="* Please Fill all the Fileds!";
+			$error="* S’il vous plaît remplir tous les champs!";
 		}
 		
 	}   
@@ -35,7 +35,7 @@
 <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
-        <title>RE Admin - Login</title>
+        <title>AH Admin - Login</title>
 		
 		<!-- Favicon -->
         <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
@@ -64,19 +64,19 @@
                 	<div class="loginbox">
                         <div class="login-right">
 							<div class="login-right-wrap">
-								<h1>Admin Login Panel</h1>
-								<p class="account-subtitle">Access to our dashboard</p>
+								<h1>Panneau Admin connexion</h1>
+								<p class="account-subtitle">Accès à notre tableau de bord</p>
 								<p style="color:red;"><?php echo $error; ?></p>
 								<!-- Form -->
 								<form method="post">
 									<div class="form-group">
-										<input class="form-control" name="user" type="text" placeholder="User Name">
+										<input class="form-control" name="user" type="text" placeholder="nom d'utilisateur">
 									</div>
 									<div class="form-group">
-										<input class="form-control" type="password" name="pass" placeholder="Password">
+										<input class="form-control" type="password" name="pass" placeholder="Mot de passe">
 									</div>
 									<div class="form-group">
-										<button class="btn btn-primary btn-block" name="login" type="submit">Login</button>
+										<button class="btn btn-primary btn-block" name="login" type="submit">connexion</button>
 									</div>
 								</form>
 								

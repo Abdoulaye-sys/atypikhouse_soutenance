@@ -14,7 +14,7 @@ if(!isset($_SESSION['auser']))
 <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
-        <title>Ventura - Dashboard</title>
+        <title>AdminAH - tableau de bord</title>
 		
 		<!-- Favicon -->
         <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
@@ -56,10 +56,10 @@ if(!isset($_SESSION['auser']))
 					<div class="page-header">
 						<div class="row">
 							<div class="col-sm-12">
-								<h3 class="page-title">Welcome Admin!</h3>
+								<h3 class="page-title">Bienvenue administrateur !</h3>
 								<p></p>
 								<ul class="breadcrumb">
-									<li class="breadcrumb-item active">Dashboard</li>
+									<li class="breadcrumb-item active">Tableau de bord</li>
 								</ul>
 							</div>
 						</div>
@@ -82,7 +82,7 @@ if(!isset($_SESSION['auser']))
 										$query = $con->query($sql);
                 						echo "$query->num_rows";?></h3>
 										
-										<h6 class="text-muted">Registered Users</h6>
+										<h6 class="text-muted">Utilisateurs enregistrés</h6>
 										<div class="progress progress-sm">
 											<div class="progress-bar bg-primary w-50"></div>
 										</div>
@@ -128,7 +128,7 @@ if(!isset($_SESSION['auser']))
 										$query = $con->query($sql);
                 						echo "$query->num_rows";?></h3>
 										
-										<h6 class="text-muted">Builder</h6>
+										<h6 class="text-muted">Constructeur</h6>
 										<div class="progress progress-sm">
 											<div class="progress-bar bg-danger w-50"></div>
 										</div>
@@ -151,7 +151,7 @@ if(!isset($_SESSION['auser']))
 										$query = $con->query($sql);
                 						echo "$query->num_rows";?></h3>
 										
-										<h6 class="text-muted">Properties</h6>
+										<h6 class="text-muted">Propriétés</h6>
 										<div class="progress progress-sm">
 											<div class="progress-bar bg-info w-50"></div>
 										</div>
@@ -178,7 +178,7 @@ if(!isset($_SESSION['auser']))
 										$query = $con->query($sql);
                 						echo "$query->num_rows";?></h3>
 										
-										<h6 class="text-muted">No. of Apartments</h6>
+										<h6 class="text-muted">Nombre d'appartements</h6>
 										<div class="progress progress-sm">
 											<div class="progress-bar bg-info w-50"></div>
 										</div>
@@ -202,7 +202,7 @@ if(!isset($_SESSION['auser']))
 										$query = $con->query($sql);
                 						echo "$query->num_rows";?></h3>
 										
-										<h6 class="text-muted">No. of Houses</h6>
+										<h6 class="text-muted">Nombre de maisons</h6>
 										<div class="progress progress-sm">
 											<div class="progress-bar bg-info w-50"></div>
 										</div>
@@ -226,7 +226,7 @@ if(!isset($_SESSION['auser']))
 										$query = $con->query($sql);
                 						echo "$query->num_rows";?></h3>
 										
-										<h6 class="text-muted">No. of Buildings</h6>
+										<h6 class="text-muted">Nombre de bâtiments</h6>
 										<div class="progress progress-sm">
 											<div class="progress-bar bg-info w-50"></div>
 										</div>
@@ -250,7 +250,7 @@ if(!isset($_SESSION['auser']))
 										$query = $con->query($sql);
                 						echo "$query->num_rows";?></h3>
 										
-										<h6 class="text-muted">No. of Flat</h6>
+										<h6 class="text-muted">Nb d'appartement</h6>
 										<div class="progress progress-sm">
 											<div class="progress-bar bg-info w-50"></div>
 										</div>
@@ -276,7 +276,7 @@ if(!isset($_SESSION['auser']))
 										$query = $con->query($sql);
                 						echo "$query->num_rows";?></h3>
 										
-										<h6 class="text-muted">On Sale</h6>
+										<h6 class="text-muted">En soldes</h6>
 										<div class="progress progress-sm">
 											<div class="progress-bar bg-info w-50"></div>
 										</div>
@@ -300,7 +300,7 @@ if(!isset($_SESSION['auser']))
 										$query = $con->query($sql);
                 						echo "$query->num_rows";?></h3>
 										
-										<h6 class="text-muted">Rentals</h6>
+										<h6 class="text-muted">Locations</h6>
 										<div class="progress progress-sm">
 											<div class="progress-bar bg-info w-50"></div>
 										</div>

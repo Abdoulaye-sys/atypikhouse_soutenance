@@ -41,7 +41,7 @@ include("config.php");
 
 <!--	Title
 	=========================================================-->
-<title>Real Estate PHP</title>
+<title>Atypik House</title>
 </head>
 <body>
 
@@ -68,13 +68,13 @@ include("config.php");
             <div class="container">
                 <div class="row">
                     <div class="col-md-6">
-                        <h2 class="page-name float-left text-white text-uppercase mt-1 mb-0"><b>Filter Property</b></h2>
+                        <h2 class="page-name float-left text-white text-uppercase mt-1 mb-0"><b>Recherche de propriétés</b></h2>
                     </div>
                     <div class="col-md-6">
                         <nav aria-label="breadcrumb" class="float-left float-md-right">
                             <ol class="breadcrumb bg-transparent m-0 p-0">
-                                <li class="breadcrumb-item text-white"><a href="#">Home</a></li>
-                                <li class="breadcrumb-item active">Filter Property</li>
+                                <li class="breadcrumb-item text-white"><a href="#">Accueil</a></li>
+                                <li class="breadcrumb-item active">Recherche de propriétés</li>
                             </ol>
                         </nav>
                     </div>
@@ -138,7 +138,7 @@ include("config.php");
 								}
 								else {
 									
-									echo "<h1 class='mb-5'><center>No Property Available</center></h1>";
+									echo "<h1 class='mb-5'><center>Aucune propriété disponible</center></h1>";
 								}
 									
 							}
@@ -166,35 +166,35 @@ include("config.php");
 					
                     <div class="col-lg-4">
                         <div class="sidebar-widget">
-                            <h4 class="double-down-line-left text-secondary position-relative pb-4 my-4">Instalment Calculator</h4>
+                            <h4 class="double-down-line-left text-secondary position-relative pb-4 my-4">Calculateur de versements</h4>
 						<form class="d-inline-block w-100" action="calc.php" method="post">
-                            <label class="sr-only">Property Amount</label>
+                            <label class="sr-only">Montant de la propriété</label>
                             <div class="input-group mb-2 mr-sm-2">
                                 <div class="input-group-prepend">
-                                    <div class="input-group-text">$</div>
+                                    <div class="input-group-text">€</div>
                                 </div>
-                                <input type="text" class="form-control" name="amount" placeholder="Property Price">
+                                <input type="text" class="form-control" name="amount" placeholder="prix de la propriété">
                             </div>
-                            <label class="sr-only">Month</label>
+                            <label class="sr-only">Mois</label>
                             <div class="input-group mb-2 mr-sm-2">
                                 <div class="input-group-prepend">
                                     <div class="input-group-text"><i class="far fa-calendar-alt"></i></div>
                                 </div>
-                                <input type="text" class="form-control" name="month" placeholder="Duration Year">
+                                <input type="text" class="form-control" name="month" placeholder="Durée Année">
                             </div>
-                            <label class="sr-only">Interest Rate</label>
+                            <label class="sr-only">taux d'intérêt</label>
                             <div class="input-group mb-2 mr-sm-2">
                                 <div class="input-group-prepend">
                                     <div class="input-group-text">%</div>
                                 </div>
-                                <input type="text" class="form-control" name="interest" placeholder="Interest Rate">
+                                <input type="text" class="form-control" name="interest" placeholder="taux d'intérêt">
                             </div>
-                            <button type="submit" value="submit" name="calc" class="btn btn-danger mt-4">Calculate Instalment</button>
+                            <button type="submit" value="submit" name="calc" class="btn btn-danger mt-4">Calculez</button>
                         </form>
                         </div>
                         
                         <div class="sidebar-widget mt-5">
-                            <h4 class="double-down-line-left text-secondary position-relative pb-4 mb-4">Recently Added Property</h4>
+                            <h4 class="double-down-line-left text-secondary position-relative pb-4 mb-4">Propriété récemment ajoutée</h4>
                             <ul class="property_list_widget">
 							
 								<?php 

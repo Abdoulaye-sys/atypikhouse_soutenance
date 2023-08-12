@@ -3,6 +3,21 @@ ini_set('session.cache_limiter','public');
 session_cache_limiter(false);
 session_start();
 include("config.php");
+// function afficherMessageAccueil($message) {
+//     // Vérifiez si le message a déjà été vu et ignoré
+//     if (!isset($_SESSION['message_ignoré']) || $_SESSION['message_ignoré'] !== true) {
+//         echo '<div class="message-accueil">' . $message . ' <a href="?ignorer_message=1">Ignorer</a></div>';
+//     }
+// }
+
+// // Vérifiez si l'utilisateur a cliqué sur "Ignorer"
+// if (isset($_GET['ignorer_message']) && $_GET['ignorer_message'] == 1) {
+//     $_SESSION['message_ignoré'] = true;
+// }
+
+// // Utilisation de la fonction pour afficher le message sur votre page d'accueil
+// $monMessage = "Bienvenue sur notre site ! Profitez de nos offres spéciales.";
+// afficherMessageAccueil($monMessage);
 								
 ?>
 <!DOCTYPE html>
@@ -201,6 +216,7 @@ include("config.php");
                                             </div>
                                         </div>
                                     </div>
+                                    
 									<?php } ?>
 
                                 </div>

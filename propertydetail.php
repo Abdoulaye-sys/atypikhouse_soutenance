@@ -67,13 +67,13 @@ include("config.php");
             <div class="container">
                 <div class="row">
                     <div class="col-md-6">
-                        <h2 class="page-name float-left text-white text-uppercase mt-1 mb-0"><b>Property Detail</b></h2>
+                        <h2 class="page-name float-left text-white text-uppercase mt-1 mb-0"><b>détails de la propriété</b></h2>
                     </div>
                     <div class="col-md-6">
                         <nav aria-label="breadcrumb" class="float-left float-md-right">
                             <ol class="breadcrumb bg-transparent m-0 p-0">
-                                <li class="breadcrumb-item text-white"><a href="#">Home</a></li>
-                                <li class="breadcrumb-item active">Property Detail</li>
+                                <li class="breadcrumb-item text-white"><a href="#">Accueil</a></li>
+                                <li class="breadcrumb-item active">détails de la propriété</li>
                             </ol>
                         </nav>
                     </div>
@@ -118,74 +118,74 @@ include("config.php");
                         </div>
                         <div class="row mb-4">
                             <div class="col-md-6">
-                                <div class="bg-success d-table px-3 py-2 rounded text-white text-capitalize">For <?php echo $row['5'];?></div>
+                                <div class="bg-success d-table px-3 py-2 rounded text-white text-capitalize">à <?php echo $row['5'];?></div>
                                 <h5 class="mt-2 text-secondary text-capitalize"><?php echo $row['1'];?></h5>
                                 <span class="mb-sm-20 d-block text-capitalize"><i class="fas fa-map-marker-alt text-success font-12"></i> &nbsp;<?php echo $row['14'];?></span>
 							</div>
                             <div class="col-md-6">
-                                <div class="text-success text-left h5 my-2 text-md-right">$<?php echo $row['13'];?></div>
-                                <div class="text-left text-md-right">Price</div>
+                                <div class="text-success text-left h5 my-2 text-md-right"><?php echo $row['13'];?>€</div>
+                                <div class="text-left text-md-right">Prix</div>
                             </div>
                         </div>
                         <div class="property-details">
                             <div class="bg-gray property-quantity px-4 pt-4 w-100">
                                 <ul>
-                                    <li><span class="text-secondary"><?php echo $row['12'];?></span> Sqft</li>
-                                    <li><span class="text-secondary"><?php echo $row['6'];?></span> Bedroom</li>
-                                    <li><span class="text-secondary"><?php echo $row['7'];?></span> Bathroom</li>
-                                    <li><span class="text-secondary"><?php echo $row['8'];?></span> Balcony</li>
+                                    <li><span class="text-secondary"><?php echo $row['12'];?></span> m²</li>
+                                    <li><span class="text-secondary"><?php echo $row['6'];?></span> chambre</li>
+                                    <li><span class="text-secondary"><?php echo $row['7'];?></span> salle de bain</li>
+                                    <li><span class="text-secondary"><?php echo $row['8'];?></span> balcon</li>
                                     <li><span class="text-secondary"><?php echo $row['10'];?></span> Hall</li>
-                                    <li><span class="text-secondary"><?php echo $row['9'];?></span> Kitchen</li>
+                                    <li><span class="text-secondary"><?php echo $row['9'];?></span> cuisine</li>
                                 </ul>
                             </div>
-                            <h4 class="text-secondary my-4">Description</h4>
+                            <h4 class="text-secondary my-4">description</h4>
                             <p><?php echo $row['2'];?></p>
                             
-                            <h5 class="mt-5 mb-4 text-secondary">Property Summary</h5>
+                            <h5 class="mt-5 mb-4 text-secondary">Appartement</h5>
                             <div  class="table-striped font-14 pb-2">
                                 <table class="w-100">
                                     <tbody>
                                         <tr>
                                             <td>BHK :</td>
                                             <td class="text-capitalize"><?php echo $row['4'];?></td>
-                                            <td>Property Type :</td>
+                                            <td>Type de bien :</td>
                                             <td class="text-capitalize"><?php echo $row['3'];?></td>
                                         </tr>
                                         <tr>
-                                            <td>Floor :</td>
+                                            <td>Rez-de-chaussée :</td>
                                             <td class="text-capitalize"><?php echo $row['11'];?></td>
-                                            <td>Total Floor :</td>
+                                            <td>Plancher total :</td>
                                             <td class="text-capitalize"><?php echo $row['28'];?></td>
                                         </tr>
                                         <tr>
-                                            <td>City :</td>
+                                            <td>Ville :</td>
                                             <td class="text-capitalize"><?php echo $row['15'];?></td>
-                                            <td>State :</td>
+                                            <td>pays :</td>
                                             <td class="text-capitalize"><?php echo $row['16'];?></td>
                                         </tr>
                                         
                                     </tbody>
                                 </table>
                             </div>
-                            <h5 class="mt-5 mb-4 text-secondary">Features</h5>
+                            <h5 class="mt-5 mb-4 text-secondary">caractéristiques</h5>
                             <div class="row">
 								<?php echo $row['17'];?>
 								
                             </div>   
-                            <h5 class="mt-5 mb-4 text-secondary">Floor Plans</h5>
+                            <h5 class="mt-5 mb-4 text-secondary">plans d'étage</h5>
                             <div class="accordion" id="accordionExample">
-                                <button class="bg-gray hover-bg-success hover-text-white text-ordinary py-3 px-4 mb-1 w-100 text-left rounded position-relative" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne"> Floor Plans </button>
+                                <button class="bg-gray hover-bg-success hover-text-white text-ordinary py-3 px-4 mb-1 w-100 text-left rounded position-relative" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne"> plans d'étage </button>
                                 <div id="collapseOne" class="collapse show p-4" aria-labelledby="headingOne" data-parent="#accordionExample">
                                     <img src="admin/property/<?php echo $row['25'];?>" alt="Not Available"> </div>
-                                <button class="bg-gray hover-bg-success hover-text-white text-ordinary py-3 px-4 mb-1 w-100 text-left rounded position-relative collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">Basement Floor</button>
+                                <button class="bg-gray hover-bg-success hover-text-white text-ordinary py-3 px-4 mb-1 w-100 text-left rounded position-relative collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">sous-sol</button>
                                 <div id="collapseTwo" class="collapse p-4" aria-labelledby="headingTwo" data-parent="#accordionExample">
                                     <img src="admin/property/<?php echo $row['26'];?>" alt="Not Available"> </div>
-                                <button class="bg-gray hover-bg-success hover-text-white text-ordinary py-3 px-4 mb-1 w-100 text-left rounded position-relative collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">Ground Floor</button>
+                                <button class="bg-gray hover-bg-success hover-text-white text-ordinary py-3 px-4 mb-1 w-100 text-left rounded position-relative collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">rez-de-chaussée</button>
                                 <div id="collapseThree" class="collapse p-4" aria-labelledby="headingThree" data-parent="#accordionExample">
                                     <img src="admin/property/<?php echo $row['27'];?>" alt="Not Available"> </div>
                             </div>
 
-                            <h5 class="mt-5 mb-4 text-secondary double-down-line-left position-relative">Contact Agent</h5>
+                            <h5 class="mt-5 mb-4 text-secondary double-down-line-left position-relative">contacter l'agent</h5>
                             <div class="agent-contact pt-60">
                                 <div class="row">
                                     <div class="col-sm-4 col-lg-3"> <img src="admin/user/<?php echo $row['uimage']; ?>" alt="" height="200" width="170"> </div>
@@ -247,32 +247,32 @@ include("config.php");
                                 </div>
                             </div>
                         </form> -->
-                        <h4 class="double-down-line-left text-secondary position-relative pb-4 my-4">Instalment Calculator</h4>
+                        <h4 class="double-down-line-left text-secondary position-relative pb-4 my-4">Calculateur de versements</h4>
                         <form class="d-inline-block w-100" action="calc.php" method="post">
-                            <label class="sr-only">Property Amount</label>
+                            <label class="sr-only">élèvent</label>
                             <div class="input-group mb-2 mr-sm-2">
                                 <div class="input-group-prepend">
-                                    <div class="input-group-text">$</div>
+                                    <div class="input-group-text">€</div>
                                 </div>
-                                <input type="text" class="form-control" name="amount" placeholder="Property Price">
+                                <input type="text" class="form-control" name="amount" placeholder="prix de la propriété">
                             </div>
-                            <label class="sr-only">Month</label>
+                            <label class="sr-only">Mois</label>
                             <div class="input-group mb-2 mr-sm-2">
                                 <div class="input-group-prepend">
                                     <div class="input-group-text"><i class="far fa-calendar-alt"></i></div>
                                 </div>
-                                <input type="text" class="form-control" name="month" placeholder="Duration Year">
+                                <input type="text" class="form-control" name="month" placeholder="Durée Année">
                             </div>
-                            <label class="sr-only">Interest Rate</label>
+                            <label class="sr-only">taux d'intérêt</label>
                             <div class="input-group mb-2 mr-sm-2">
                                 <div class="input-group-prepend">
                                     <div class="input-group-text">%</div>
                                 </div>
-                                <input type="text" class="form-control" name="interest" placeholder="Interest Rate">
+                                <input type="text" class="form-control" name="interest" placeholder="taux d'intérêt">
                             </div>
-                            <button type="submit" value="submit" name="calc" class="btn btn-danger mt-4">Calclute Instalment</button>
+                            <button type="submit" value="submit" name="calc" class="btn btn-danger mt-4">Versement de Calclute</button>
                         </form>
-                        <h4 class="double-down-line-left text-secondary position-relative pb-4 mb-4 mt-5">Featured Property</h4>
+                        <h4 class="double-down-line-left text-secondary position-relative pb-4 mb-4 mt-5">propriété recommandée</h4>
                         <ul class="property_list_widget">
 							
                             <?php 
@@ -290,7 +290,7 @@ include("config.php");
                         </ul>
 
                         <div class="sidebar-widget mt-5">
-                            <h4 class="double-down-line-left text-secondary position-relative pb-4 mb-4">Recently Added Property</h4>
+                            <h4 class="double-down-line-left text-secondary position-relative pb-4 mb-4">Propriété récemment ajoutée</h4>
                             <ul class="property_list_widget">
 							
 								<?php 

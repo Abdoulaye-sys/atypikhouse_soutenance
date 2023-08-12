@@ -1,15 +1,14 @@
-**Log on to codeastro.com for more projects!***
 
 **Database Name: realestatephp**
 
-**Developed by Suraj Kumar Vishwakarma**
+**Developed par Abdoulaye**
 
 **Recommended PHP Version 5.6, 7.4**
 
 
 **Admin Login Details**
 
-Username: admin
+Username: abdoulaye
 Password: codeastro.com
 
 

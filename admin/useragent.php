@@ -14,7 +14,7 @@ if(!isset($_SESSION['auser']))
 <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
-        <title>LM Homes | Admin</title>
+        <title>Atypik House | Admin</title>
 		
 		<!-- Favicon -->
         <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
@@ -61,7 +61,7 @@ if(!isset($_SESSION['auser']))
 							<div class="col">
 								<h3 class="page-title">Agent</h3>
 								<ul class="breadcrumb">
-									<li class="breadcrumb-item"><a href="dashboard.php">Dashboard</a></li>
+									<li class="breadcrumb-item"><a href="dashboard.php">Tableau de bord</a></li>
 									<li class="breadcrumb-item active">Agent</li>
 								</ul>
 							</div>
@@ -73,7 +73,7 @@ if(!isset($_SESSION['auser']))
 						<div class="col-sm-12">
 							<div class="card">
 								<div class="card-header">
-									<h4 class="card-title">Agent List</h4>
+									<h4 class="card-title">Liste des agents</h4>
 									<?php 
 										if(isset($_GET['msg']))	
 										echo $_GET['msg'];	
@@ -85,8 +85,8 @@ if(!isset($_SESSION['auser']))
                                             <thead>
                                                 <tr>
                                                     <th>#</th>
-                                                    <th>Name</th>
-                                                    <th>Email</th>
+                                                    <th>Nom</th>
+                                                    <th>E-mail</th>
                                                     <th>Contact</th>
                                                     <th>Utype</th>
 													<th>Image</th>
@@ -110,7 +110,7 @@ if(!isset($_SESSION['auser']))
                                                     <td><?php echo $row['3']; ?></td>
                                                     <td><?php echo $row['5']; ?></td>
 													<td><img src="user/<?php echo $row['6']; ?>" height="50px" width="50px"></td>
-                                                    <td><a href="useragentdelete.php?id=<?php echo $row['0']; ?>"><button class="btn btn-danger">Delete</button></a></td>
+                                                    <td><a href="useragentdelete.php?id=<?php echo $row['0']; ?>"><button class="btn btn-danger">Supprimer</button></a></td>
                                                 </tr>
                                                 <?php
 												$cnt=$cnt+1;

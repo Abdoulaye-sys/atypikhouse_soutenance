@@ -79,11 +79,11 @@ if(isset($_POST['add']))
 	$result=mysqli_query($con,$sql);
 	if($result == true)
 	{
-		$msg="<p class='alert alert-success'>Property Updated</p>";
+		$msg="<p class='alert alert-success'>Propriété mise à jour</p>";
 		header("Location:feature.php?msg=$msg");
 	}
 	else{
-		$msg="<p class='alert alert-warning'>Property Not Updated</p>";
+		$msg="<p class='alert alert-warning'>Propriété non mise à jour</p>";
 		header("Location:feature.php?msg=$msg");
 	}
 }						
@@ -121,7 +121,7 @@ if(isset($_POST['add']))
 
 <!--	Title
 	=========================================================-->
-<title>Real Estate PHP</title>
+<title>Atypik House</title>
 </head>
 <body>
 
@@ -169,7 +169,7 @@ if(isset($_POST['add']))
             <div class="container">
                     <div class="row">
 						<div class="col-lg-12">
-							<h2 class="text-secondary double-down-line text-center">Update Property</h2>
+							<h2 class="text-secondary double-down-line text-center">Mettre à jour la propriété</h2>
                         </div>
 					</div>
                     <div class="row p-5 bg-white">
@@ -184,17 +184,17 @@ if(isset($_POST['add']))
 								?>
 												
 								<div class="description">
-									<h5 class="text-secondary">Basic Information</h5><hr>
+									<h5 class="text-secondary">renseignements de base</h5><hr>
 										<div class="row">
 											<div class="col-xl-12">
 												<div class="form-group row">
-													<label class="col-lg-2 col-form-label">Title</label>
+													<label class="col-lg-2 col-form-label">titre</label>
 													<div class="col-lg-9">
 														<input type="text" class="form-control" name="title" required value="<?php echo $row['1']; ?>">
 													</div>
 												</div>
 												<div class="form-group row">
-													<label class="col-lg-2 col-form-label">Content</label>
+													<label class="col-lg-2 col-form-label">contenu</label>
 													<div class="col-lg-9">
 														<textarea class="tinymce form-control" name="content" rows="10" cols="30"><?php echo $row['2']; ?></textarea>
 													</div>
@@ -203,37 +203,33 @@ if(isset($_POST['add']))
 											</div>
 											<div class="col-xl-6">
 												<div class="form-group row">
-													<label class="col-lg-3 col-form-label">Property Type</label>
+													<label class="col-lg-3 col-form-label">type de bien</label>
 													<div class="col-lg-9">
 														<select class="form-control" required name="ptype">
-															<option value="">Select Type</option>
-															<option value="apartment">Apartment</option>
-															<option value="flat">Flat</option>
-															<option value="building">Building</option>
-															<option value="house">House</option>
-															<option value="villa">Villa</option>
-															<option value="office">Office</option>
+															<option value="">Choisir Type</option>
+															<option value="apartment">appartement</option>
+															<option value="house">Maison</option>
 														</select>
 													</div>
 												</div>
 												<div class="form-group row">
-													<label class="col-lg-3 col-form-label">Selling Type</label>
+													<label class="col-lg-3 col-form-label">Type de vente</label>
 													<div class="col-lg-9">
 														<select class="form-control" required name="stype">
-															<option value="">Select Status</option>
-															<option value="rent">Rent</option>
-															<option value="sale">Sale</option>
+															<option value="">sélectionner le statut</option>
+															<option value="louer">Louer</option>
+															<option value="vente">Vente</option>
 														</select>
 													</div>
 												</div>
 												<div class="form-group row">
-													<label class="col-lg-3 col-form-label">Bathroom</label>
+													<label class="col-lg-3 col-form-label">salle de bain</label>
 													<div class="col-lg-9">
 														<input type="text" class="form-control" name="bath" required value="<?php echo $row['7']; ?>">
 													</div>
 												</div>
 												<div class="form-group row">
-													<label class="col-lg-3 col-form-label">Kitchen</label>
+													<label class="col-lg-3 col-form-label">cuisine</label>
 													<div class="col-lg-9">
 														<input type="text" class="form-control" name="kitc" required value="<?php echo $row['9']; ?>">
 													</div>
@@ -258,19 +254,19 @@ if(isset($_POST['add']))
 													</div>
 												</div>
 												<div class="form-group row">
-													<label class="col-lg-3 col-form-label">Bedroom</label>
+													<label class="col-lg-3 col-form-label">chambre à coucher</label>
 													<div class="col-lg-9">
 														<input type="text" class="form-control" name="bed" required value="<?php echo $row['6']; ?>">
 													</div>
 												</div>
 												<div class="form-group row">
-													<label class="col-lg-3 col-form-label">Balcony</label>
+													<label class="col-lg-3 col-form-label">balcon</label>
 													<div class="col-lg-9">
 														<input type="text" class="form-control" name="balc" required value="<?php echo $row['8']; ?>">
 													</div>
 												</div>
 												<div class="form-group row">
-													<label class="col-lg-3 col-form-label">Hall</label>
+													<label class="col-lg-3 col-form-label">salle</label>
 													<div class="col-lg-9">
 														<input type="text" class="form-control" name="hall" required value="<?php echo $row['10']; ?>">
 													</div>
@@ -278,36 +274,36 @@ if(isset($_POST['add']))
 												
 											</div>
 										</div>
-										<h5 class="text-secondary">Price & Location</h5><hr>
+										<h5 class="text-secondary">Prix et emplacement</h5><hr>
 										<div class="row">
 											<div class="col-xl-6">
 												<div class="form-group row">
-													<label class="col-lg-3 col-form-label">Floor</label>
+													<label class="col-lg-3 col-form-label">étage</label>
 													<div class="col-lg-9">
 														<select class="form-control" required name="floor">
-															<option value="">Select Floor</option>
-															<option value="1st Floor">1st Floor</option>
-															<option value="2nd Floor">2nd Floor</option>
-															<option value="3rd Floor">3rd Floor</option>
-															<option value="4th Floor">4th Floor</option>
-															<option value="5th Floor">5th Floor</option>
+															<option value="">Sélectionner un étage</option>
+															<option value="1st Floor">1er étage</option>
+															<option value="2nd Floor">2e étage</option>
+															<option value="3rd Floor">3e étage</option>
+															<option value="4th Floor">4e étage</option>
+															<option value="5th Floor">5e étage</option>
 														</select>
 													</div>
 												</div>
 												<div class="form-group row">
-													<label class="col-lg-3 col-form-label">Price</label>
+													<label class="col-lg-3 col-form-label">prix</label>
 													<div class="col-lg-9">
 														<input type="text" class="form-control" name="price" required value="<?php echo $row['13']; ?>">
 													</div>
 												</div>
 												<div class="form-group row">
-													<label class="col-lg-3 col-form-label">City</label>
+													<label class="col-lg-3 col-form-label">ville</label>
 													<div class="col-lg-9">
 														<input type="text" class="form-control" name="city" required value="<?php echo $row['15']; ?>">
 													</div>
 												</div>
 												<div class="form-group row">
-													<label class="col-lg-3 col-form-label">State</label>
+													<label class="col-lg-3 col-form-label">état</label>
 													<div class="col-lg-9">
 														<input type="text" class="form-control" name="state" required value="<?php echo $row['16']; ?>">
 													</div>
@@ -315,36 +311,36 @@ if(isset($_POST['add']))
 											</div>
 											<div class="col-xl-6">
 												<div class="form-group row">
-													<label class="col-lg-3 col-form-label">Total Floor</label>
+													<label class="col-lg-3 col-form-label">totale de plancher</label>
 													<div class="col-lg-9">
 														<select class="form-control" required name="totalfl">
-															<option value="">Select Floor</option>
-															<option value="1 Floor">1 Floor</option>
-															<option value="2 Floor">2 Floor</option>
-															<option value="3 Floor">3 Floor</option>
-															<option value="4 Floor">4 Floor</option>
-															<option value="5 Floor">5 Floor</option>
-															<option value="6 Floor">6 Floor</option>
-															<option value="7 Floor">7 Floor</option>
-															<option value="8 Floor">8 Floor</option>
-															<option value="9 Floor">9 Floor</option>
-															<option value="10 Floor">10 Floor</option>
-															<option value="11 Floor">11 Floor</option>
-															<option value="12 Floor">12 Floor</option>
-															<option value="13 Floor">13 Floor</option>
-															<option value="14 Floor">14 Floor</option>
-															<option value="15 Floor">15 Floor</option>
+															<option value="">Sélectionner un étage</option>
+															<option value="1 Floor">1 étage</option>
+															<option value="2 Floor">2 étage</option>
+															<option value="3 Floor">3 étage</option>
+															<option value="4 Floor">4 étage</option>
+															<option value="5 Floor">5 étage</option>
+															<option value="6 Floor">6 étage</option>
+															<option value="7 Floor">7 étage</option>
+															<option value="8 Floor">8 étage</option>
+															<option value="9 Floor">9 étage</option>
+															<option value="10 Floor">10 étage</option>
+															<option value="11 Floor">11 étage</option>
+															<option value="12 Floor">12 étage</option>
+															<option value="13 Floor">13 étage</option>
+															<option value="14 Floor">14 étage</option>
+															<option value="15 Floor">15 étage</option>
 														</select>
 													</div>
 												</div>
 												<div class="form-group row">
-													<label class="col-lg-3 col-form-label">Area Size</label>
+													<label class="col-lg-3 col-form-label">taille de la zone</label>
 													<div class="col-lg-9">
 														<input type="text" class="form-control" name="asize" required value="<?php echo $row['12']; ?>">
 													</div>
 												</div>
 												<div class="form-group row">
-													<label class="col-lg-3 col-form-label">Address</label>
+													<label class="col-lg-3 col-form-label">adresse</label>
 													<div class="col-lg-9">
 														<input type="text" class="form-control" name="loc" required value="<?php echo $row['14']; ?>">
 													</div>
@@ -354,9 +350,9 @@ if(isset($_POST['add']))
 										</div>
 										
 										<div class="form-group row">
-											<label class="col-lg-2 col-form-label">Feature</label>
+											<label class="col-lg-2 col-form-label">fonctionnalité</label>
 											<div class="col-lg-9">
-											<p class="alert alert-danger">* Important Please Do Not Remove Below Content Only Change <b>Yes</b> Or <b>No</b> or Details and Do Not Add More Details</p>
+											<p class="alert alert-danger">* Important Veuillez ne pas supprimer le contenu ci-dessous Modifier uniquement <b>Oui</b> ou <b>Non</b> ou Détails et ne pas ajouter plus de détails</p>
 											
 											<textarea class="tinymce form-control" name="feature" rows="10" cols="30">
 												
@@ -366,7 +362,7 @@ if(isset($_POST['add']))
 											</div>
 										</div>
 												
-										<h5 class="text-secondary">Image & Status</h5><hr>
+										<h5 class="text-secondary">Image et état</h5><hr>
 										<div class="row">
 											<div class="col-xl-6">
 												
@@ -395,14 +391,14 @@ if(isset($_POST['add']))
 													<label class="col-lg-3 col-form-label">Status</label>
 													<div class="col-lg-9">
 														<select class="form-control"  required name="status">
-															<option value="">Select Status</option>
-															<option value="available">Available</option>
-															<option value="sold out">Sold Out</option>
+															<option value="">sélectionner le statut</option>
+															<option value="disponible">disponible</option>
+															<option value="vendu">vendu</option>
 														</select>
 													</div>
 												</div>
 												<div class="form-group row">
-													<label class="col-lg-3 col-form-label">Basement Floor Plan Image</label>
+													<label class="col-lg-3 col-form-label">Image du plan du sous-sol</label>
 													<div class="col-lg-9">
 														<input class="form-control" name="fimage1" type="file">
 														<img src="admin/property/<?php echo $row['26'];?>" alt="pimage" height="150" width="180">
@@ -427,14 +423,14 @@ if(isset($_POST['add']))
 												</div>
 												
 												<div class="form-group row">
-													<label class="col-lg-3 col-form-label">Floor Plan Image</label>
+													<label class="col-lg-3 col-form-label">Image du plan d’étage</label>
 													<div class="col-lg-9">
 														<input class="form-control" name="fimage" type="file">
 														<img src="admin/property/<?php echo $row['25'];?>" alt="pimage" height="150" width="180">
 													</div>
 												</div>
 												<div class="form-group row">
-													<label class="col-lg-3 col-form-label">Ground Floor Plan Image</label>
+													<label class="col-lg-3 col-form-label">Image du plan du rez-de-chaussée</label>
 													<div class="col-lg-9">
 														<input class="form-control" name="fimage2" type="file">
 														<img src="admin/property/<?php echo $row['27'];?>" alt="pimage" height="150" width="180">
@@ -444,7 +440,7 @@ if(isset($_POST['add']))
 										</div>
 
 										
-											<input type="submit" value="Submit" class="btn btn-success"name="add" style="margin-left:200px;">
+											<input type="submit" value="soumettre" class="btn btn-success"name="add" style="margin-left:200px;">
 										
 									</div>
 								</form>

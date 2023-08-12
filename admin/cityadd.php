@@ -18,16 +18,16 @@ if(isset($_POST['insert']))
 		$result=mysqli_query($con,$sql);
 		if($result)
 			{
-				$msg="<p class='alert alert-success'>City Inserted Successfully</p>";
+				$msg="<p class='alert alert-success'>Ville insérée avec succès</p>";
 						
 			}
 			else
 			{
-				$error="<p class='alert alert-warning'>* City Not Inserted</p>";
+				$error="<p class='alert alert-warning'>* Ville non insérée</p>";
 			}
 	}
 	else{
-		$error = "<p class='alert alert-warning'>* Fill all the Fields</p>";
+		$error = "<p class='alert alert-warning'>* Remplissez tous les champs</p>";
 	}
 	
 }
@@ -38,7 +38,7 @@ if(isset($_POST['insert']))
 <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
-        <title>Ventura - Data Tables</title>
+        <title>Atypik House - tables de données</title>
 		
 		<!-- Favicon -->
         <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
@@ -83,10 +83,10 @@ if(isset($_POST['insert']))
 					<div class="page-header">
 						<div class="row">
 							<div class="col">
-								<h3 class="page-title">State</h3>
+								<h3 class="page-title">État</h3>
 								<ul class="breadcrumb">
-									<li class="breadcrumb-item"><a href="dashboard.php">Dashboard</a></li>
-									<li class="breadcrumb-item active">State</li>
+									<li class="breadcrumb-item"><a href="dashboard.php">Tableau de bord</a></li>
+									<li class="breadcrumb-item active">État</li>
 								</ul>
 							</div>
 						</div>
@@ -98,7 +98,7 @@ if(isset($_POST['insert']))
 						<div class="col-md-12">
 							<div class="card">
 								<div class="card-header">
-									<h1 class="card-title">Add City</h1>
+									<h1 class="card-title">Ajouter une ville</h1>
 									<?php echo $error;?>
 									<?php echo $msg;?>
 									<?php 
@@ -110,12 +110,12 @@ if(isset($_POST['insert']))
 									<div class="card-body">
 											<div class="row">
 												<div class="col-xl-6">
-													<h5 class="card-title">City Details</h5>
+													<h5 class="card-title">Détails de la ville</h5>
 													<div class="form-group row">
-														<label class="col-lg-3 col-form-label">State Name</label>
+														<label class="col-lg-3 col-form-label">Nom d'état</label>
 														<div class="col-lg-9" >	
 															<select class="form-control" name="state">
-																<option value="">Select</option>
+																<option value="">Sélectionnez </option>
 																<?php
 																		$query1=mysqli_query($con,"select * from state");
 																		while($row1=mysqli_fetch_row($query1))
@@ -127,7 +127,7 @@ if(isset($_POST['insert']))
 														</div>
 													</div>
 													<div class="form-group row">
-														<label class="col-lg-3 col-form-label">City Name</label>
+														<label class="col-lg-3 col-form-label">Nom de Ville</label>
 														<div class="col-lg-9">
 															<input type="text" class="form-control" name="city">
 														</div>
@@ -135,7 +135,7 @@ if(isset($_POST['insert']))
 												</div>
 											</div>
 											<div class="text-left">
-												<input type="submit" class="btn btn-primary"  value="Submit" name="insert" style="margin-left:200px;">
+												<input type="submit" class="btn btn-primary"  value="Soumettre" name="insert" style="margin-left:200px;">
 											</div>
 									</div>
 								</form>
@@ -149,7 +149,7 @@ if(isset($_POST['insert']))
 						<div class="col-sm-12">
 							<div class="card">
 								<div class="card-header">
-									<h4 class="card-title">City List</h4>
+									<h4 class="card-title">Liste des villes</h4>
 									
 								</div>
 								<div class="card-body">
@@ -160,7 +160,7 @@ if(isset($_POST['insert']))
                                                     <th>#</th>
                                                     <th>City</th>
 													<!-- <th>State ID</th> -->
-													<th>State</th>
+													<th>Etat</th>
 													<th>Actions</th>
                                                 </tr>
                                             </thead>
@@ -180,8 +180,8 @@ if(isset($_POST['insert']))
                                                     <td><?php echo $row['1']; ?></td>
 													<!-- <td><?php echo $row['2']; ?></td> -->
 													<td><?php echo $row['sname']; ?></td>
-													<td><a href="cityedit.php?id=<?php echo $row['0']; ?>"><button class="btn btn-info">Edit</button></a>
-                                                   <a href="citydelete.php?id=<?php echo $row['0']; ?>"><button class="btn btn-danger">Delete</button></a></td>
+													<td><a href="cityedit.php?id=<?php echo $row['0']; ?>"><button class="btn btn-info">Modifier</button></a>
+                                                   <a href="citydelete.php?id=<?php echo $row['0']; ?>"><button class="btn btn-danger">Supprimer</button></a></td>
                                                 </tr>
                                                 <?php $cnt=$cnt+1; } ?>
 
