@@ -14,7 +14,7 @@ if(!isset($_SESSION['auser']))
 <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
-        <title>Ventura - Data Tables</title>
+        <title>AtypikHouse -Tables de données</title>
 		
 		<!-- Favicon -->
         <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
@@ -59,10 +59,10 @@ if(!isset($_SESSION['auser']))
 					<div class="page-header">
 						<div class="row">
 							<div class="col">
-								<h3 class="page-title">User</h3>
+								<h3 class="page-title">Utilisateur</h3>
 								<ul class="breadcrumb">
-									<li class="breadcrumb-item"><a href="dashboard.php">Dashboard</a></li>
-									<li class="breadcrumb-item active">User</li>
+									<li class="breadcrumb-item"><a href="dashboard.php">Tableau de bord</a></li>
+									<li class="breadcrumb-item active">Utilisateur</li>
 								</ul>
 							</div>
 						</div>
@@ -73,9 +73,9 @@ if(!isset($_SESSION['auser']))
 						<div class="col-sm-12">
 							<div class="card">
 								<div class="card-header">
-									<h4 class="card-title">Default Datatable</h4>
+									<h4 class="card-title">Table de données par défaut</h4>
 									<p class="card-text">
-										This is the most basic example of the datatables with zero configuration. Use the <code>.datatable</code> class to initialize datatables.
+                                    C'est l'exemple le plus basique des tables de données sans configuration. Utilisez la .datatableclasse pour initialiser les tables de données.
 									</p>
 								</div>
 								<div class="card-body">
@@ -83,12 +83,12 @@ if(!isset($_SESSION['auser']))
 									<table id="basic-datatable" class="table dt-responsive nowrap">
                                             <thead>
                                                 <tr>
-                                                    <th>Name</th>
+                                                    <th>Nom</th>
                                                     <th>Position</th>
-                                                    <th>Office</th>
+                                                    <th>Bureau</th>
                                                     <th>Age</th>
-                                                    <th>Start date</th>
-                                                    <th>Salary</th>
+                                                    <th>Date </th>
+                                                    <th>salaire</th>
                                                 </tr>
                                             </thead>
                                         
@@ -230,22 +230,20 @@ if(!isset($_SESSION['auser']))
                                 <div class="card">
                                     <div class="card-body">
 
-                                        <h4 class="header-title mt-0 mb-1">Buttons example</h4>
+                                        <h4 class="header-title mt-0 mb-1">Exemple de boutons</h4>
                                         <p class="sub-header">
-                                            The Buttons extension for DataTables provides a common set of options, API methods and styling to display buttons on a page
-                                            that will interact with a DataTable. The core library provides the based framework upon which plug-ins can built.
-                                        </p>
+                                        L'extension Buttons pour DataTables fournit un ensemble commun d'options, de méthodes API et de style pour afficher des boutons sur une page qui interagiront avec un DataTable. La bibliothèque principale fournit le cadre basé sur lequel les plug-ins peuvent être construits.                                        </p>
 
 
                                         <table id="datatable-buttons" class="table table-striped dt-responsive nowrap">
                                             <thead>
                                                 <tr>
-                                                    <th>Name</th>
+                                                    <th>Nom</th>
                                                     <th>Position</th>
-                                                    <th>Office</th>
+                                                    <th>Bureau</th>
                                                     <th>Age</th>
-                                                    <th>Start date</th>
-                                                    <th>Salary</th>
+                                                    <th>Date de début</th>
+                                                    <th>salaire</th>
                                                 </tr>
                                             </thead>
                                         
@@ -324,21 +322,20 @@ if(!isset($_SESSION['auser']))
                                 <div class="card">
                                     <div class="card-body">
 
-                                        <h4 class="header-title mt-0 mb-1">Multi item selection</h4>
+                                        <h4 class="header-title mt-0 mb-1">Sélection multi-articles</h4>
                                         <p class="sub-header">
-                                            This example shows the multi option. Note how a click on a row will toggle its selected state without effecting other rows,
-                                            unlike the os and single options shown in other examples.
+                                        Cet exemple montre l'option multi. Notez comment un clic sur une ligne fera basculer son état sélectionné sans affecter les autres lignes, contrairement aux options os et single présentées dans d'autres exemples.
                                         </p>
 
                                         <table id="selection-datatable" class="table dt-responsive nowrap">
                                             <thead>
                                                 <tr>
-                                                    <th>Name</th>
+                                                    <th>Nom</th>
                                                     <th>Position</th>
-                                                    <th>Office</th>
+                                                    <th>Bureau</th>
                                                     <th>Age</th>
-                                                    <th>Start date</th>
-                                                    <th>Salary</th>
+                                                    <th>Date de début</th>
+                                                    <th>salaire</th>
                                                 </tr>
                                             </thead>
                                         

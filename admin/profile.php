@@ -14,7 +14,7 @@ if(!isset($_SESSION['auser']))
 <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
-        <title>LM HOMES | Profile</title>
+        <title>AP House | Profil</title>
 		
 		<!-- Favicon -->
         <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
@@ -53,10 +53,10 @@ if(!isset($_SESSION['auser']))
 					<div class="page-header">
 						<div class="row">
 							<div class="col">
-								<h3 class="page-title">Profile</h3>
+								<h3 class="page-title">Profil</h3>
 								<ul class="breadcrumb">
-									<li class="breadcrumb-item"><a href="dashboard.php">Dashboard</a></li>
-									<li class="breadcrumb-item active">Profile</li>
+									<li class="breadcrumb-item"><a href="dashboard.php">Tableau de bord</a></li>
+									<li class="breadcrumb-item active">Profil</li>
 								</ul>
 							</div>
 						</div>
@@ -93,7 +93,7 @@ if(!isset($_SESSION['auser']))
 							<div class="profile-menu">
 								<ul class="nav nav-tabs nav-tabs-solid">
 									<li class="nav-item">
-										<a class="nav-link active" data-toggle="tab" href="#per_details_tab">About</a>
+										<a class="nav-link active" data-toggle="tab" href="#per_details_tab">A propos de </a>
 									</li>
 								<!--	<li class="nav-item">
 										<a class="nav-link" data-toggle="tab" href="#password_tab">Password</a>
@@ -111,19 +111,19 @@ if(!isset($_SESSION['auser']))
 											<div class="card">
 												<div class="card-body">
 													<div class="row">
-														<p class="col-sm-3 text-muted text-sm-right mb-0 mb-sm-3">Name</p>
+														<p class="col-sm-3 text-muted text-sm-right mb-0 mb-sm-3">Nom</p>
 														<p class="col-sm-9"><?php echo $row['1']; ?></p>
 													</div>
 													<div class="row">
-														<p class="col-sm-3 text-muted text-sm-right mb-0 mb-sm-3">Date of Birth</p>
+														<p class="col-sm-3 text-muted text-sm-right mb-0 mb-sm-3">Date de naissance</p>
 														<p class="col-sm-9"><?php echo $row['4']; ?></p>
 													</div>
 													<div class="row">
-														<p class="col-sm-3 text-muted text-sm-right mb-0 mb-sm-3">Email ID</p>
+														<p class="col-sm-3 text-muted text-sm-right mb-0 mb-sm-3">E-mail ID</p>
 														<p class="col-sm-9"><a href="#"><?php echo $row['2']; ?></a></p>
 													</div>
 													<div class="row">
-														<p class="col-sm-3 text-muted text-sm-right mb-0 mb-sm-3">Mobile</p>
+														<p class="col-sm-3 text-muted text-sm-right mb-0 mb-sm-3">Telephone</p>
 														<p class="col-sm-9"><?php echo $row['5']; ?></p>
 													</div>
 													
@@ -137,7 +137,7 @@ if(!isset($_SESSION['auser']))
 											<div class="card">
 												<div class="card-body">
 													<h5 class="card-title d-flex justify-content-between">
-														<span>Account Status</span>
+														<span>statut du compte</span>
 														
 													</h5>
 													<button class="btn btn-success" type="button"><i class="fe fe-check-verified"></i> Active</button>

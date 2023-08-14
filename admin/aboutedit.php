@@ -22,11 +22,11 @@ if(isset($_POST['update']))
 	$result=mysqli_query($con,$sql);
 	if($result == true)
 	{
-		$msg="<p class='alert alert-success'>About Updated</p>";
+		$msg="<p class='alert alert-success'>À propos de la mise à jour</p>";
 		header("Location:aboutview.php?msg=$msg");
 	}
 	else{
-		$msg="<p class='alert alert-warning'>About Not Updated</p>";
+		$msg="<p class='alert alert-warning'></p>";
 		header("Location:aboutview.php?msg=$msg");
 	}
 }
@@ -38,7 +38,7 @@ if(isset($_POST['update']))
 <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
-        <title>Ventura - Vertical Form</title>
+        <title>AP House - About</title>
 		
 		<!-- Favicon -->
         <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
@@ -81,10 +81,10 @@ if(isset($_POST['update']))
 					<div class="page-header">
 						<div class="row">
 							<div class="col">
-								<h3 class="page-title">About</h3>
+								<h3 class="page-title">À propos de nous</h3>
 								<ul class="breadcrumb">
-									<li class="breadcrumb-item"><a href="dashboard.php">Dashboard</a></li>
-									<li class="breadcrumb-item active">About</li>
+									<li class="breadcrumb-item"><a href="dashboard.php">Tableau de bord</a></li>
+									<li class="breadcrumb-item active">À propos de nous</li>
 								</ul>
 							</div>
 						</div>
@@ -95,7 +95,7 @@ if(isset($_POST['update']))
 						<div class="col-md-12">
 							<div class="card">
 								<div class="card-header">
-									<h2 class="card-title">About Us</h2>
+									<h2 class="card-title">À propos de nous</h2>
 								</div>
 								<?php 
 								$aid = $_GET['id'];
@@ -108,15 +108,15 @@ if(isset($_POST['update']))
 								<div class="card-body">
 										<div class="row">
 											<div class="col-xl-12">
-												<h5 class="card-title">About Us </h5>
+												<h5 class="card-title">À propos de nous </h5>
 												<div class="form-group row">
-													<label class="col-lg-2 col-form-label">Title</label>
+													<label class="col-lg-2 col-form-label">Titre</label>
 													<div class="col-lg-9">
 														<input type="text" class="form-control" name="utitle" value="<?php echo $row['1']; ?>">
 													</div>
 												</div>
 												<div class="form-group row">
-													<label class="col-lg-2 col-form-label">Content</label>
+													<label class="col-lg-2 col-form-label">Contenu</label>
 													<div class="col-lg-9">
 														<textarea class="tinymce form-control" name="ucontent" rows="10" cols="30"><?php echo $row['2']; ?></textarea>
 													</div>
@@ -131,7 +131,7 @@ if(isset($_POST['update']))
 											</div>
 										</div>
 										<div class="text-left">
-											<input type="submit" class="btn btn-primary"  value="Submit" name="update" style="margin-left:200px;">
+											<input type="submit" class="btn btn-primary"  value="Soumettre" name="update" style="margin-left:200px;">
 										</div>
 									</form>
 								</div>

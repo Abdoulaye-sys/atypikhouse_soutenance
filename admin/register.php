@@ -16,17 +16,17 @@ if(isset($_REQUEST['insert']))
 		$result=mysqli_query($con,$sql);
 		if($result)
 			{
-				$msg='Admin Register Successfully';
+				$msg='Inscription Administrateur réussi';
 				
 						
 			}
 			else
 			{
-				$error='* Not Register Admin Try Again';
+				$error='* Inscription Administrateur échouée Réessayez';
 			}
 	}
 	else{
-		$error="* Please Fill all the Fields!";
+		$error="* Veuillez remplir tous les champs!";
 	}
 	
 	
@@ -67,41 +67,41 @@ if(isset($_REQUEST['insert']))
                     	
                         <div class="login-right">
 							<div class="login-right-wrap">
-								<h1>Register</h1>
-								<p class="account-subtitle">Access to our dashboard</p>
+								<h1>Création de compte</h1>
+								<p class="account-subtitle">Accès à notre tableau de bord</p>
 								<p style="color:red;"><?php echo $error; ?></p>
 								<p style="color:green;"><?php echo $msg; ?></p>
 								<!-- Form -->
 								<form method="post">
 									<div class="form-group">
-										<input class="form-control" type="text" placeholder="Name" name="name">
+										<input class="form-control" type="text" placeholder="Nom" name="name">
 									</div>
 									<div class="form-group">
-										<input class="form-control" type="email" placeholder="Email" name="email">
+										<input class="form-control" type="email" placeholder="E-mail" name="email">
 									</div>
 									<div class="form-group">
-										<input class="form-control" type="text" placeholder="Password" name="pass">
+										<input class="form-control" type="text" placeholder="Mot de passe" name="pass">
 									</div>
 									<div class="form-group">
-										<input class="form-control" type="date" placeholder="Date of Birth" name="dob">
+										<input class="form-control" type="date" placeholder="Date de naissance" name="dob">
 									</div>
 									<div class="form-group">
-										<input class="form-control" type="text" placeholder="Phone" name="phone" maxlength="10">
+										<input class="form-control" type="text" placeholder="Téléphone" name="phone" maxlength="10">
 									</div>
 									<div class="form-group mb-0">
-										<input class="btn btn-primary btn-block" type="submit" name="insert" Value="Register">
+										<input class="btn btn-primary btn-block" type="submit" name="insert" Value="Inscription">
 									</div>
 								</form>
 								<!-- /Form -->
 								
 								<div class="login-or">
 									<span class="or-line"></span>
-									<span class="span-or">or</span>
+									<span class="span-or">ou</span>
 								</div>
 								
 								<!-- Social Login -->
 								<div class="social-login">
-									<span>Register with</span>
+									<span>Inscrivez-vous avec</span>
 									<a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
 									<a href="#" class="google"><i class="fa fa-google"></i></a>
 									<a href="#" class="facebook"><i class="fa fa-twitter"></i></a>
@@ -109,7 +109,7 @@ if(isset($_REQUEST['insert']))
 								</div>
 								<!-- /Social Login -->
 								
-								<div class="text-center dont-have">Already have an account? <a href="index.php">Login</a></div>
+								<div class="text-center dont-have">Vous avez déjà un compte? <a href="index.php">Se connecter</a></div>
 							</div>
                         </div>
                     </div>

@@ -6,7 +6,7 @@
 	{
 		$user=$_REQUEST['user'];
 		$pass=$_REQUEST['pass'];
-		$pass= sha1($pass);
+		$pass= ($pass);
 		
 		if(!empty($user) && !empty($pass))
 		{

@@ -19,12 +19,12 @@ $sql = "DELETE FROM about WHERE id = {$aid}";
 $result = mysqli_query($con, $sql);
 if($result == true)
 {
-	$msg="<p class='alert alert-success'>About Deleted</p>";
+	$msg="<p class='alert alert-success'>À propos de Supprimé</p>";
 	header("Location:aboutview.php?msg=$msg");
 }
 else
 {
-	$msg="<p class='alert alert-warning'>About not Deleted</p>";
+	$msg="<p class='alert alert-warning'>À propos de non supprimé</p>";
 		header("Location:aboutview.php?msg=$msg");
 }
 

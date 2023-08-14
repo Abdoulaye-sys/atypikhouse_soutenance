@@ -14,7 +14,7 @@ if(!isset($_SESSION['auser']))
 <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
-        <title>LM Homes | Admin</title>
+        <title>AP House | Admin</title>
 		
 		<!-- Favicon -->
         <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
@@ -59,10 +59,10 @@ if(!isset($_SESSION['auser']))
 					<div class="page-header">
 						<div class="row">
 							<div class="col">
-								<h3 class="page-title">Feedback</h3>
+								<h3 class="page-title">Commentaire</h3>
 								<ul class="breadcrumb">
-									<li class="breadcrumb-item"><a href="dashboard.php">Dashboard</a></li>
-									<li class="breadcrumb-item active">Feedback</li>
+									<li class="breadcrumb-item"><a href="dashboard.php">Tableeau de bord</a></li>
+									<li class="breadcrumb-item active">commentaire</li>
 								</ul>
 							</div>
 						</div>
@@ -73,8 +73,8 @@ if(!isset($_SESSION['auser']))
 						<div class="col-sm-12">
 							<div class="card">
 								<div class="card-header">
-									<h4 class="card-title">Feedback List</h4>
-									<small>Here, user can select feedbacks for displaying as testimonial. Note: Status "1" sets the feedback as testimonial.</small>
+									<h4 class="card-title">Liste des Commentaires</h4>
+									<small>Ici, l’utilisateur peut sélectionner des commentaires pour afficher comme témoignage. Remarque: Statut "1" définit le commentaire comme témoignage.</small>
 									<?php 
 											if(isset($_GET['msg']))	
 											echo $_GET['msg'];
@@ -87,10 +87,10 @@ if(!isset($_SESSION['auser']))
                                             <thead>
                                                 <tr>
                                                     <th>#</th>
-                                                    <th>Name</th>
-                                                    <th>Email</th>
-                                                    <th>Feedback</th>
-													<th>Status</th>
+                                                    <th>Nom</th>
+                                                    <th>E-mail</th>
+                                                    <th>Commentaire</th>
+													<th>Statut</th>
                                                     <th>Actions</th>
                                                 </tr>
                                             </thead>
@@ -110,8 +110,8 @@ if(!isset($_SESSION['auser']))
                                                     <td><?php echo $row['uemail']; ?></td>
                                                     <td><?php echo $row['2']; ?></td>
                                                     <td><?php echo $row['3']; ?></td>
-													<td><a href="feedbackedit.php?id=<?php echo $row['0']; ?>"><button class="btn btn-info">Edit</button></a>
-                                                    <a href="feedbackdelete.php?id=<?php echo $row['0']; ?>"><button class="btn btn-danger">Delete</button></a></td>
+													<td><a href="feedbackedit.php?id=<?php echo $row['0']; ?>"><button class="btn btn-info">Modifier</button></a>
+                                                    <a href="feedbackdelete.php?id=<?php echo $row['0']; ?>"><button class="btn btn-danger">Supprimer</button></a></td>
                                                 </tr>
                                                 <?php
 												$cnt=$cnt+1;

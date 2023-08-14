@@ -14,7 +14,7 @@ if(!isset($_SESSION['auser']))
 <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
-        <title>Ventura - Data Tables</title>
+        <title>Atypik House - Tableaux de données</title>
 		
 		<!-- Favicon -->
         <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
@@ -59,10 +59,10 @@ if(!isset($_SESSION['auser']))
 					<div class="page-header">
 						<div class="row">
 							<div class="col">
-								<h3 class="page-title">Property</h3>
+								<h3 class="page-title">Propriété</h3>
 								<ul class="breadcrumb">
-									<li class="breadcrumb-item"><a href="dashboard.php">Dashboard</a></li>
-									<li class="breadcrumb-item active">Property</li>
+									<li class="breadcrumb-item"><a href="dashboard.php">Tableau de bord</a></li>
+									<li class="breadcrumb-item active">Propriété</li>
 								</ul>
 							</div>
 						</div>
@@ -77,7 +77,7 @@ if(!isset($_SESSION['auser']))
                                 <div class="card">
                                     <div class="card-body">
 
-                                        <h4 class="header-title mt-0 mb-4">Property View</h4>
+                                        <h4 class="header-title mt-0 mb-4">Vue de la propriété</h4>
 										<?php 
 											if(isset($_GET['msg']))	
 											echo $_GET['msg'];	
@@ -86,18 +86,18 @@ if(!isset($_SESSION['auser']))
                                             <thead>
                                                 <tr>
                                                     <!-- <th>P ID</th> -->
-                                                    <th>Title</th>
+                                                    <th>Titre</th>
                                                     <th>Type</th>
                                                     <th>BHK</th>
                                                     <th>S/R</th>
                                                    
-													<th>Area</th>
-                                                    <th>Price</th>
-                                                    <th>Location</th>
-													<th>Status</th>
+													<th>Zone</th>
+                                                    <th>Prix</th>
+                                                    <th>Emplacement</th>
+													<th>Statut</th>
                                                    
                                                     
-                                                    <th>Added Date</th>
+                                                    <th>Date d'ajout</th>
                                                     <th>Actions</th>
                                                     
                                                 </tr>
@@ -128,8 +128,8 @@ if(!isset($_SESSION['auser']))
 													
                                                     
                                                     <td><?php echo $row['29']; ?></td>
-													<td><a href="propertyedit.php?id=<?php echo $row['0'];?>"><button class="btn btn-info">Edit</button></a>
-                                                    <a href="propertydelete.php?id=<?php echo $row['0'];?>"><button class="btn btn-danger">Delete</button></a></td>
+													<td><a href="propertyedit.php?id=<?php echo $row['0'];?>"><button class="btn btn-info">Modifier</button></a>
+                                                    <a href="propertydelete.php?id=<?php echo $row['0'];?>"><button class="btn btn-danger">Supprimer</button></a></td>
                                                 </tr>
                                                <?php
 												} 

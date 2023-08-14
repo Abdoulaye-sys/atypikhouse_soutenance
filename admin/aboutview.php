@@ -14,7 +14,7 @@ if(!isset($_SESSION['auser']))
 <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
-        <title>LM Homes | About</title>
+        <title>AP House| About</title>
 		
 		<!-- Favicon -->
         <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
@@ -53,10 +53,10 @@ if(!isset($_SESSION['auser']))
 					<div class="page-header">
 						<div class="row">
 							<div class="col">
-								<h3 class="page-title">View About</h3>
+								<h3 class="page-title">Voir  à propos de nous</h3>
 								<ul class="breadcrumb">
-									<li class="breadcrumb-item"><a href="dashboard.php">Dashboard</a></li>
-									<li class="breadcrumb-item active">View About</li>
+									<li class="breadcrumb-item"><a href="dashboard.php">Tableau de bord</a></li>
+									<li class="breadcrumb-item active">Voir  à propos de nous</li>
 								</ul>
 							</div>
 						</div>
@@ -67,7 +67,7 @@ if(!isset($_SESSION['auser']))
 						<div class="col-sm-12">
 							<div class="card">
 								<div class="card-header">
-									<h4 class="card-title">List Of About</h4>
+									<h4 class="card-title">Liste à propos de nous</h4>
 									<?php 
 											if(isset($_GET['msg']))	
 											echo $_GET['msg'];
@@ -81,8 +81,8 @@ if(!isset($_SESSION['auser']))
 											<thead>
 												<tr>
 													<th>#</th>
-													<th>Title</th>
-													<th>Content</th>
+													<th>Titre</th>
+													<th>Contenu</th>
 													<th>Image</th>
 													<th>Actions</th>
 													
@@ -101,8 +101,8 @@ if(!isset($_SESSION['auser']))
 													<td><?php echo $row['1']; ?></td>
 													<td><?php echo $row['2']; ?></td>
 													<td><img src="upload/<?php echo $row['3']; ?>" height="200px" width="200px"></td>
-													<td><a href="aboutedit.php?id=<?php echo $row['0']; ?>"><button class="btn btn-info">Edit</button></a>
-													<a href="aboutdelete.php?id=<?php echo $row['0']; ?>"><button class="btn btn-danger">Delete</button></a></td>
+													<td><a href="aboutedit.php?id=<?php echo $row['0']; ?>"><button class="btn btn-info">Modifier</button></a>
+													<a href="aboutdelete.php?id=<?php echo $row['0']; ?>"><button class="btn btn-danger">Supprimer</button></a></td>
 												</tr>
 											</tbody>
 												<?php

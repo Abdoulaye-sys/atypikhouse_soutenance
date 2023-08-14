@@ -87,10 +87,10 @@ if(isset($_POST['insert']))
 					<div class="page-header">
 						<div class="row">
 							<div class="col">
-								<h3 class="page-title">État</h3>
+								<h3 class="page-title">Pays</h3>
 								<ul class="breadcrumb">
 									<li class="breadcrumb-item"><a href="dashboard.php">Tableau de bord</a></li>
-									<li class="breadcrumb-item active">État</li>
+									<li class="breadcrumb-item active">Pays</li>
 								</ul>
 							</div>
 						</div>

@@ -17,12 +17,12 @@ $sql = "DELETE FROM user WHERE uid = {$uid}";
 $result = mysqli_query($con, $sql);
 if($result == true)
 {
-	$msg="<p class='alert alert-success'>Agent Deleted</p>";
+	$msg="<p class='alert alert-success'>Agent supprimé</p>";
 	header("Location:useragent.php?msg=$msg");
 }
 else
 {
-	$msg="<p class='alert alert-warning'>Agent not Deleted</p>";
+	$msg="<p class='alert alert-warning'>Agent non supprimé</p>";
 		header("Location:useragent.php?msg=$msg");
 }
 

@@ -19,12 +19,12 @@ if(isset($_POST['update']))
 	$result=mysqli_query($con,$sql);
 	if($result == true)
 		{
-			$msg="<p class='alert alert-success'>Feedback Updated Successfully</p>";
+			$msg="<p class='alert alert-success'>Feedback mis à jour avec succès</p>";
 			header("Location:feedbackview.php?msg=$msg");		
 		}
 		else
 		{
-			$msg="<p class='alert alert-warning'>Feedback Not Updated</p>";
+			$msg="<p class='alert alert-warning'>Feedback pas mis à jour</p>";
 			header("Location:feedbackview.php?msg=$msg");
 		}
 }
@@ -36,7 +36,7 @@ if(isset($_POST['update']))
 <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
-        <title>LM HOMES | About</title>
+        <title>AP House | About</title>
 		
 		<!-- Favicon -->
         <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
@@ -80,7 +80,7 @@ if(isset($_POST['update']))
 							<div class="col">
 								<h3 class="page-title">Feedback</h3>
 								<ul class="breadcrumb">
-									<li class="breadcrumb-item"><a href="dashboard.php">Dashboard</a></li>
+									<li class="breadcrumb-item"><a href="dashboard.php">Tableau de bord</a></li>
 									<li class="breadcrumb-item active">Feedback</li>
 								</ul>
 							</div>

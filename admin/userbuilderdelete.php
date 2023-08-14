@@ -17,12 +17,12 @@ $sql = "DELETE FROM user WHERE uid = {$uid}";
 $result = mysqli_query($con, $sql);
 if($result == true)
 {
-	$msg="<p class='alert alert-success'>Builder Deleted</p>";
+	$msg="<p class='alert alert-success'>Constructeur supprimé</p>";
 	header("Location:userbuilder.php?msg=$msg");
 }
 else
 {
-	$msg="<p class='alert alert-warning'>Builder not Deleted</p>";
+	$msg="<p class='alert alert-warning'>Constructeur non supprimé</p>";
 		header("Location:userbuilder.php?msg=$msg");
 }
 
