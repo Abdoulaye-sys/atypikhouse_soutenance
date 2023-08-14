@@ -39,7 +39,7 @@ if(isset($_POST['update']))
         <title>AP House | About</title>
 		
 		<!-- Favicon -->
-        <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
+		<link rel="icon" type="images/png" href="..\images\favicon-16x16.png">
 		
 		<!-- Bootstrap CSS -->
         <link rel="stylesheet" href="assets/css/bootstrap.min.css">
@@ -78,10 +78,10 @@ if(isset($_POST['update']))
 					<div class="page-header">
 						<div class="row">
 							<div class="col">
-								<h3 class="page-title">Feedback</h3>
+								<h3 class="page-title">Retour</h3>
 								<ul class="breadcrumb">
 									<li class="breadcrumb-item"><a href="dashboard.php">Tableau de bord</a></li>
-									<li class="breadcrumb-item active">Feedback</li>
+									<li class="breadcrumb-item active">Retour</li>
 								</ul>
 							</div>
 						</div>
@@ -92,7 +92,7 @@ if(isset($_POST['update']))
 						<div class="col-md-12">
 							<div class="card">
 								<div class="card-header">
-									<h2 class="card-title">Update Feedback</h2>
+									<h2 class="card-title">Mettre à jour les commentaires</h2>
 								</div>
 								<?php 
 								$fid = $_GET['id'];
@@ -105,27 +105,27 @@ if(isset($_POST['update']))
 								<div class="card-body">
 										<div class="row">
 											<div class="col-xl-12">
-												<h5 class="card-title">Update Feedback</h5>
+												<h5 class="card-title">Mettre à jour les commentaires</h5>
 												
 												<?php echo $msg; ?>
 												<div class="form-group row">
-													<label class="col-lg-2 col-form-label">Feedback Id</label>
+													<label class="col-lg-2 col-form-label">Code de rétroaction</label>
 													<div class="col-lg-9">
 														<input type="text" class="form-control" name="fid" value="<?php echo $row['0']; ?>" disabled>
 													</div>
 												</div>
 												<div class="form-group row">
-													<label class="col-lg-2 col-form-label">Status</label>
+													<label class="col-lg-2 col-form-label">Statut</label>
 													<div class="col-lg-9">
 														<input type="text" class="form-control" name="status" required="" value="<?php echo $row['3']; ?>">
-														<small>Enter [1] to set as testimonial & [0] to cancel it.</small>
+														<small>Entrez [1] pour définir comme témoignage et[0] pour l’annuler.</small>
 													</div>
 												</div>
 												
 											</div>
 										</div>
 										<div class="text-left">
-											<input type="submit" class="btn btn-primary"  value="Submit" name="update" style="margin-left:200px;">
+											<input type="submit" class="btn btn-primary"  value="Soumettre" name="update" style="margin-left:200px;">
 										</div>
 									</form>
 									<?php } ?>

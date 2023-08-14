@@ -41,7 +41,7 @@ if(isset($_REQUEST['insert']))
         <title>Admin  - Création de compte</title>
 		
 		<!-- Favicon -->
-        <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
+		<link rel="icon" type="images/png" href="..\images\favicon-16x16.png">
 
 		<!-- Bootstrap CSS -->
         <link rel="stylesheet" href="assets/css/bootstrap.min.css">

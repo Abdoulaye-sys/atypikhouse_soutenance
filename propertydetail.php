@@ -19,7 +19,7 @@ include("config.php");
 <meta name="description" content="Real Estate PHP">
 <meta name="keywords" content="">
 <meta name="author" content="Unicoder">
-<link rel="shortcut icon" href="images/favicon.ico">
+<link rel="icon" type="images/png" href="images\favicon-16x16.png">
 
 <!--	Fonts
 	========================================================-->

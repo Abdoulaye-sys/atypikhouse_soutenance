@@ -303,7 +303,7 @@ if(isset($_POST['add']))
 													</div>
 												</div>
 												<div class="form-group row">
-													<label class="col-lg-3 col-form-label">état</label>
+													<label class="col-lg-3 col-form-label">pays</label>
 													<div class="col-lg-9">
 														<input type="text" class="form-control" name="state" required value="<?php echo $row['16']; ?>">
 													</div>
@@ -362,7 +362,7 @@ if(isset($_POST['add']))
 											</div>
 										</div>
 												
-										<h5 class="text-secondary">Image et état</h5><hr>
+										<h5 class="text-secondary">Image et pays</h5><hr>
 										<div class="row">
 											<div class="col-xl-6">
 												
@@ -388,7 +388,7 @@ if(isset($_POST['add']))
 													</div>
 												</div>
 												<div class="form-group row">
-													<label class="col-lg-3 col-form-label">Status</label>
+													<label class="col-lg-3 col-form-label">Statut</label>
 													<div class="col-lg-9">
 														<select class="form-control"  required name="status">
 															<option value="">sélectionner le statut</option>

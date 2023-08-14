@@ -95,7 +95,7 @@ if(isset($_POST['add']))
 
 <!-- Meta Tags -->
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<link rel="shortcut icon" href="images/favicon.ico">
+<link rel="icon" type="images/png" href="images\favicon-16x16.png">
 
 <!--	Fonts
 	========================================================-->
@@ -291,9 +291,9 @@ if(isset($_POST['add']))
 													</div>
 												</div>
 												<div class="form-group row">
-													<label class="col-lg-3 col-form-label">état</label>
+													<label class="col-lg-3 col-form-label">pays</label>
 													<div class="col-lg-9">
-														<input type="text" class="form-control" name="state" required placeholder="Entrer l’état">
+														<input type="text" class="form-control" name="state" required placeholder="Entrer l’pays">
 													</div>
 												</div>
 											</div>

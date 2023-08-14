@@ -41,7 +41,7 @@ if(isset($_POST['insert']))
         <title>Atypik House - tables de données</title>
 		
 		<!-- Favicon -->
-        <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
+		<link rel="icon" type="images/png" href="..\images\favicon-16x16.png">
 		
 		<!-- Bootstrap CSS -->
         <link rel="stylesheet" href="assets/css/bootstrap.min.css">
@@ -83,10 +83,10 @@ if(isset($_POST['insert']))
 					<div class="page-header">
 						<div class="row">
 							<div class="col">
-								<h3 class="page-title">État</h3>
+								<h3 class="page-title">Pays</h3>
 								<ul class="breadcrumb">
 									<li class="breadcrumb-item"><a href="dashboard.php">Tableau de bord</a></li>
-									<li class="breadcrumb-item active">État</li>
+									<li class="breadcrumb-item active">Pays</li>
 								</ul>
 							</div>
 						</div>
@@ -112,7 +112,7 @@ if(isset($_POST['insert']))
 												<div class="col-xl-6">
 													<h5 class="card-title">Détails de la ville</h5>
 													<div class="form-group row">
-														<label class="col-lg-3 col-form-label">Nom d'état</label>
+														<label class="col-lg-3 col-form-label">Nom du pays</label>
 														<div class="col-lg-9" >	
 															<select class="form-control" name="state">
 																<option value="">Sélectionnez </option>
@@ -127,7 +127,7 @@ if(isset($_POST['insert']))
 														</div>
 													</div>
 													<div class="form-group row">
-														<label class="col-lg-3 col-form-label">Nom de Ville</label>
+														<label class="col-lg-3 col-form-label">Nom de la Ville</label>
 														<div class="col-lg-9">
 															<input type="text" class="form-control" name="city">
 														</div>

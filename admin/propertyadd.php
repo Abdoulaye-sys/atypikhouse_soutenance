@@ -92,7 +92,7 @@ if(isset($_POST['add']))
         <title>AP House | Property</title>
 		
 		<!-- Favicon -->
-        <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
+		<link rel="icon" type="images/png" href="..\images\favicon-16x16.png">
 		
 		<!-- Bootstrap CSS -->
         <link rel="stylesheet" href="assets/css/bootstrap.min.css">
@@ -248,12 +248,12 @@ if(isset($_POST['add']))
 													<label class="col-lg-3 col-form-label">Sol</label>
 													<div class="col-lg-9">
 														<select class="form-control" required name="floor">
-															<option value="">Select Floor</option>
-															<option value="1st Floor">1st Floor</option>
-															<option value="2nd Floor">2nd Floor</option>
-															<option value="3rd Floor">3rd Floor</option>
-															<option value="4th Floor">4th Floor</option>
-															<option value="5th Floor">5th Floor</option>
+															<option value="">Sélectionner un étage</option>
+															<option value="1st Floor">1er étage</option>
+															<option value="2nd Floor">2e étage</option>
+															<option value="3rd Floor">3e étage</option>
+															<option value="4th Floor">4e étage</option>
+															<option value="5th Floor">5e étage</option>
 														</select>
 													</div>
 												</div>
@@ -409,7 +409,7 @@ if(isset($_POST['add']))
 												<div class="form-group row">
 													<label class="col-lg-3 col-form-label">Uid</label>
 													<div class="col-lg-9">
-														<input type="text" class="form-control" name="uid" required placeholder="Enter User Id (only number)">
+														<input type="text" class="form-control" name="uid" required placeholder="Entrez le code d’utilisateur (seulement le numéro)">
 													</div>
 												</div>
 												<div class="form-group row">

@@ -138,7 +138,7 @@ if(!isset($_SESSION['auser']))
 								<span>requête</span>
 							</li>
 							<li class="submenu">
-								<a href="#"><i class="fe fe-comment"></i> <span> Personne, ommentaires </span> <span class="menu-arrow"></span></a>
+								<a href="#"><i class="fe fe-comment"></i> <span> Personne, commentaires </span> <span class="menu-arrow"></span></a>
 								<ul style="display: none;">
 									<li><a href="contactview.php"> contact </a></li>
 									<li><a href="feedbackview.php"> commentaire </a></li>
@@ -154,7 +154,12 @@ if(!isset($_SESSION['auser']))
 									<li><a href="aboutview.php"> Voir le contenu à propos </a></li>
 								</ul>
 							</li>
-							
+							<li class="menu-title"> 
+								<span>Site Web</span>
+							</li>
+							<li> 
+								<a href="../index.php"><i class="fa fa-globe" aria-hidden="true"></i> <span>Revenir vers le site</span></a>
+							</li>
 						</ul>
 					</div>
                 </div>

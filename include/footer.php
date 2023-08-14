@@ -29,8 +29,8 @@
                                                 <h4 class="widget-title text-white double-down-line-left position-relative">Liens rapides</h4>
                                                 <ul class="hover-text-primary">
                                                     <li><a href="about.php" class="text-white">À propos de nous</a></li>
-                                                    <li><a href="#" class="text-white">Propriété en vedette</a></li>
-                                                    <li><a href="#" class="text-white">Soumettre la propriété</a></li>
+                                                    <li><a href="property.php" class="text-white">Propriété en vedette</a></li>
+                                                    <li><a href="submitproperty.php" class="text-white">Soumettre la propriété</a></li>
                                                     <li><a href="agent.php" class="text-white">Nos Agents</a></li>
                                                 </ul>
                                             </div>
@@ -40,8 +40,8 @@
                                                 <h4 class="widget-title text-white double-down-line-left position-relative">Contactez-nous</h4>
                                                 <ul class="text-white">
                                                     <li class="hover-text-primary"><i class="fas fa-map-marker-alt text-white mr-2 font-13 mt-1"></i>11 allée des alpes , Villiers-sur-Marne</li>
-                                                    <li class="hover-text-primary"> <i class="fas fa-phone-alt text-white mr-2 font-13 mt-1"></i>77549672365</li>
-													<li class="hover-text-primary"> <i class="fas fa-phone-alt text-white mr-2 font-13 mt-1"></i>77549682303</li>
+                                                    <li class="hover-text-primary"> <i class="fas fa-phone-alt text-white mr-2 font-13 mt-1"></i>01 23 45 67 89</li>
+													<li class="hover-text-primary"> <i class="fas fa-phone-alt text-white mr-2 font-13 mt-1"></i>01 23 45 67 80</li>
                                                     <li class="hover-text-primary"><i class="fas fa-envelope text-white mr-2 font-13 mt-1"></i>support@atypikhouse.com</li>
                                                 </ul>
                                             </div>
@@ -54,7 +54,7 @@
                     </div>
                 </div>
                 <div class="row copyright">
-                    <div class="col-sm-6"> <span class="text-white">© <?php echo date('Y');?> Atypik House Website - Developer Par Abdoulaye Ba</span> </div>
+                    <div class="col-sm-6"> <span class="text-white">© <?php echo date('Y');?> Atypik House Website - Developper Par Abdoulaye Ba</span> </div>
                     <div class="col-sm-6">
                         <ul class="line-menu text-white hover-text-primary float-right">
                             <li><a href="#">Politique de confidentialité</a></li>

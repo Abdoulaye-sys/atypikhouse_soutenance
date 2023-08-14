@@ -9,6 +9,5 @@
 **Admin Login Details**
 
 Username: abdoulaye
-Password: codeastro.com
-
+Password: atypikhouseadmin
 

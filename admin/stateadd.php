@@ -17,12 +17,12 @@ if(isset($_POST['insert']))
 		$result=mysqli_query($con,$sql);
 		if($result)
 			{
-				$msg="<p class='alert alert-success'>État inséré avec succès</p>";
+				$msg="<p class='alert alert-success'>Pays inséré avec succès</p>";
 						
 			}
 			else
 			{
-				$error="<p class='alert alert-warning'>* État non inséré</p>";
+				$error="<p class='alert alert-warning'>* Pays non inséré</p>";
 			}
 	}
 	else{
@@ -40,7 +40,7 @@ if(isset($_POST['insert']))
         <title>Atypik House - tables de données</title>
 		
 		<!-- Favicon -->
-        <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
+		<link rel="icon" type="images/png" href="..\images\favicon-16x16.png">
 		
 		<!-- Bootstrap CSS -->
         <link rel="stylesheet" href="assets/css/bootstrap.min.css">
@@ -82,10 +82,10 @@ if(isset($_POST['insert']))
 					<div class="page-header">
 						<div class="row">
 							<div class="col">
-								<h3 class="page-title">État</h3>
+								<h3 class="page-title">Pays</h3>
 								<ul class="breadcrumb">
 									<li class="breadcrumb-item"><a href="dashboard.php">Tableau de bord</a></li>
-									<li class="breadcrumb-item active">État</li>
+									<li class="breadcrumb-item active">Pays</li>
 								</ul>
 							</div>
 						</div>
@@ -97,7 +97,7 @@ if(isset($_POST['insert']))
 						<div class="col-md-12">
 							<div class="card">
 								<div class="card-header">
-									<h1 class="card-title">Ajouter un état</h1>
+									<h1 class="card-title">Ajouter un pays</h1>
 									<?php echo $error;?>
 									<?php echo $msg;?>
 									<?php 
@@ -109,9 +109,9 @@ if(isset($_POST['insert']))
 									<div class="card-body">
 											<div class="row">
 												<div class="col-xl-6">
-													<h5 class="card-title">Détails de l'état</h5>
+													<h5 class="card-title">Détails du pays</h5>
 													<div class="form-group row">
-														<label class="col-lg-3 col-form-label">Nom d'état</label>
+														<label class="col-lg-3 col-form-label">Nom pays</label>
 														<div class="col-lg-9">
 															<input type="text" class="form-control" name="state">
 														</div>
@@ -133,7 +133,7 @@ if(isset($_POST['insert']))
 						<div class="col-sm-12">
 							<div class="card">
 								<div class="card-header">
-									<h4 class="card-title">Liste d'état</h4>
+									<h4 class="card-title">Liste des pays</h4>
 									
 								</div>
 								<div class="card-body">
@@ -142,7 +142,7 @@ if(isset($_POST['insert']))
                                             <thead>
                                                 <tr>
                                                     <th>#</th>
-                                                    <th>État</th>
+                                                    <th>pays</th>
 													<th>Actions</th>
                                                 </tr>
                                             </thead>

@@ -36,7 +36,7 @@ if(isset($_POST['send']))
 
 <!-- Meta Tags -->
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<link rel="shortcut icon" href="images/favicon.ico">
+<link rel="icon" type="images/png" href="images\favicon-16x16.png">
 
 <!--	Fonts
 	========================================================-->
