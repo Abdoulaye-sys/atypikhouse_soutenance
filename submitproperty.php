@@ -293,7 +293,7 @@ if(isset($_POST['add']))
 												<div class="form-group row">
 													<label class="col-lg-3 col-form-label">pays</label>
 													<div class="col-lg-9">
-														<input type="text" class="form-control" name="state" required placeholder="Entrer l’pays">
+														<input type="text" class="form-control" name="state" required placeholder="Entrer le pays">
 													</div>
 												</div>
 											</div>

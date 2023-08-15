@@ -44,48 +44,29 @@ include("config.php");
 </head>
 <body>
 
-<!--	Page Loader
-=============================================================
-<div class="page-loader position-fixed z-index-9999 w-100 bg-white vh-100">
-	<div class="d-flex justify-content-center y-middle position-relative">
-	  <div class="spinner-border" role="status">
-		<span class="sr-only">Loading...</span>
-	  </div>
-	</div>
-</div>
---> 
+    <?php
+    // Inclure votre fichier de configuration de la base de données
+    include 'config.php';
 
+    // Vérifier si un identifiant de logement a été passé via l'URL
+    if (isset($_GET['pid'])) {
+        $property_id = $_GET['pid'];
 
-<div id="page-wrapper">
-    <div class="row"> 
-        <!--	Header start  -->
-		<?php include("include/header.php");?>
-        <!--	Header end  -->
-        
-        <!--	Banner   --->
-        <div class="banner-full-row page-banner" style="background-image:url('images/breadcromb.jpg');">
+        // Récupérer les détails du logement depuis la base de données en utilisant l'identifiant
+        $query = "SELECT * FROM property WHERE pid = $property_id";
+        $result = mysqli_query($con, $query);
+
+        if ($result && mysqli_num_rows($result) > 0) {
+            $property = mysqli_fetch_assoc($result);
+    ?>
+<!--	Header start  -->
+<?php include("include/header.php");?>  
+<!--	Header end  -->
+
+<div class="full-row">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-6">
-                        <h2 class="page-name float-left text-white text-uppercase mt-1 mb-0"><b>détails de la propriété</b></h2>
-                    </div>
-                    <div class="col-md-6">
-                        <nav aria-label="breadcrumb" class="float-left float-md-right">
-                            <ol class="breadcrumb bg-transparent m-0 p-0">
-                                <li class="breadcrumb-item text-white"><a href="#">Accueil</a></li>
-                                <li class="breadcrumb-item active">détails de la propriété</li>
-                            </ol>
-                        </nav>
-                    </div>
-                </div>
-            </div>
-        </div>
-         <!--	Banner   --->
 
-		
-        <div class="full-row">
-            <div class="container">
-                <div class="row">
 				
 					<?php
 						$id=$_REQUEST['pid']; 
@@ -118,14 +99,23 @@ include("config.php");
                         </div>
                         <div class="row mb-4">
                             <div class="col-md-6">
-                                <div class="bg-success d-table px-3 py-2 rounded text-white text-capitalize">à <?php echo $row['5'];?></div>
                                 <h5 class="mt-2 text-secondary text-capitalize"><?php echo $row['1'];?></h5>
                                 <span class="mb-sm-20 d-block text-capitalize"><i class="fas fa-map-marker-alt text-success font-12"></i> &nbsp;<?php echo $row['14'];?></span>
-                                <a href="booking.php?pid=<?php echo $row['0']; ?>" class="btn bg-info mt-4">Réserver</a>
+                                <h2>Réserver ce logement</h2>
+                                <form action="process_reservation.php" method="post">
+                                    <input type="hidden" name="property_id" value="<?php echo $property_id; ?>">
+                                    <label for="dates">Dates de séjour :</label>
+                                    <input type="text" class="datepicker" name="dates" required>
+                                    <input type="hidden" name="disponibilite" value="<?php echo $property_data['disponibilite']; ?>">
+                                    <label for="dates_reservees">Dates réservées :</label>
+                                    <input type="text" name="dates_reservees" required>
+                                    <button type="submit" name="submit" class="btn bg-info mt-4">Réserver</button>
+                                </form>
+
 							</div>
                             <div class="col-md-6">
-                                <div class="text-success text-left h5 my-2 text-md-right"><?php echo $row['13'];?>€</div>
                                 <div class="text-left text-md-right">Prix</div>
+                                <div class="text-success text-left h5 my-2 text-md-right"><?php echo $row['13'];?>€</div>
 
                             </div>
                         </div>
@@ -187,93 +177,12 @@ include("config.php");
                                     <img src="admin/property/<?php echo $row['27'];?>" alt="Not Available"> </div>
                             </div>
 
-                            <h5 class="mt-5 mb-4 text-secondary double-down-line-left position-relative">contacter l'agent</h5>
-                            <div class="agent-contact pt-60">
-                                <div class="row">
-                                    <div class="col-sm-4 col-lg-3"> <img src="admin/user/<?php echo $row['uimage']; ?>" alt="" height="200" width="170"> </div>
-                                    <div class="col-sm-8 col-lg-9">
-                                        <div class="agent-data text-ordinary mt-sm-20">
-                                            <h6 class="text-success text-capitalize"><?php echo $row['uname'];?></h6>
-                                            <ul class="mb-3">
-                                                <li><?php echo $row['uphone'];?></li>
-                                                <li><?php echo $row['uemail'];?></li>
-                                            </ul>
-                                            
-                                            <div class="mt-3 text-secondary hover-text-success">
-                                                <ul>
-                                                    <li class="float-left mr-3"><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                                                    <li class="float-left mr-3"><a href="#"><i class="fab fa-twitter"></i></a></li>
-                                                    <li class="float-left mr-3"><a href="#"><i class="fab fa-google-plus-g"></i></a></li>
-                                                    <li class="float-left mr-3"><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
-                                                    <li class="float-left mr-3"><a href="#"><i class="fas fa-rss"></i></a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
                         </div>
                     </div>
 					
 					<?php } ?>
 					
                     <div class="col-lg-4">
-                        <!-- <h4 class="double-down-line-left text-secondary position-relative pb-4 mb-4 mt-md-50">Send Message</h4>
-                        <form method="post" action="#">
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="Enter Name">
-                                    </div>
-                                </div>
-                                <div class="col-md-12">
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="Enter Email">
-                                    </div>
-                                </div>
-                                <div class="col-md-12">
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="Enter Phone">
-                                    </div>
-                                </div>
-								<div class="col-md-12">
-                                    <div class="form-group">
-										<textarea class="form-control" placeholder="Enter Message"></textarea>
-                                    </div>
-                                </div>
-								
-                                <div class="col-md-12">
-                                    <div class="form-group mt-4">
-                                        <button type="submit" class="btn btn-success w-100">Search Property</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </form> -->
-                        <h4 class="double-down-line-left text-secondary position-relative pb-4 my-4">Calculateur de versements</h4>
-                        <form class="d-inline-block w-100" action="calc.php" method="post">
-                            <label class="sr-only">Montant</label>
-                            <div class="input-group mb-2 mr-sm-2">
-                                <div class="input-group-prepend">
-                                    <div class="input-group-text">€</div>
-                                </div>
-                                <input type="text" class="form-control" name="amount" placeholder="prix de la propriété">
-                            </div>
-                            <label class="sr-only">Mois</label>
-                            <div class="input-group mb-2 mr-sm-2">
-                                <div class="input-group-prepend">
-                                    <div class="input-group-text"><i class="far fa-calendar-alt"></i></div>
-                                </div>
-                                <input type="text" class="form-control" name="month" placeholder="Durée Année">
-                            </div>
-                            <label class="sr-only">taux d'intérêt</label>
-                            <div class="input-group mb-2 mr-sm-2">
-                                <div class="input-group-prepend">
-                                    <div class="input-group-text">%</div>
-                                </div>
-                                <input type="text" class="form-control" name="interest" placeholder="taux d'intérêt">
-                            </div>
-                            <button type="submit" value="submit" name="calc" class="btn btn-danger mt-4">Calculez</button>
-                        </form>
                         <h4 class="double-down-line-left text-secondary position-relative pb-4 mb-4 mt-5">propriété recommandée</h4>
                         <ul class="property_list_widget">
 							
@@ -314,20 +223,23 @@ include("config.php");
             </div>
         </div>
 
-         <!--	Footer   start-->
-		<?php include("include/footer.php");?>
-		<!--	Footer   start-->
-        
-        
-        <!-- Scroll to top --> 
-        <a href="#" class="bg-secondary text-white hover-text-secondary" id="scroll"><i class="fas fa-angle-up"></i></a> 
-        <!-- End Scroll To top --> 
-    </div>
-</div>
-<!-- Wrapper End --> 
 
-<!--	Js Link
-============================================================--> 
+    <?php
+        } else {
+            echo "Logement non trouvé.";
+        }
+
+        // Libérer le résultat de la requête
+        mysqli_free_result($result);
+    } else {
+        echo "Identifiant de logement manquant.";
+    }
+
+    // Fermer la connexion à la base de données
+    mysqli_close($con);
+    ?>
+
+
 <script src="js/jquery.min.js"></script> 
 <!--jQuery Layer Slider --> 
 <script src="js/greensock.js"></script> 
@@ -343,7 +255,13 @@ include("config.php");
 <script src="js/jquery.slider.js"></script> 
 <script src="js/wow.js"></script> 
 <script src="js/custom.js"></script> 
+<script>
+        const datepicker = new Datepicker(document.querySelector('#datepicker'), {
+            autohide: true,
+            format: 'yyyy-mm-dd',
+            startDate: new Date(),
+        });
+    </script>
 
 </body>
-
 </html>

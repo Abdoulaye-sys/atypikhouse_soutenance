@@ -18,7 +18,6 @@ include("config.php");
 // // Utilisation de la fonction pour afficher le message sur votre page d'accueil
 // $monMessage = "Bienvenue sur notre site ! Profitez de nos offres spéciales.";
 // afficherMessageAccueil($monMessage);
-								
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -95,8 +94,8 @@ include("config.php");
                                         <div class="form-group">
                                             <select class="form-control" name="stype">
                                                 <option value="">Sélectionnez statut</option>
-												<option value="rent">Louer</option>
-												<option value="sale">vente</option>
+												<option value="Louer">Louer</option>
+												<option value="Vendre">Vendre</option>
                                             </select>
                                         </div>
                                     </div>
