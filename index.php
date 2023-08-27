@@ -28,9 +28,6 @@ include("config.php");
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-<!-- Meta Tags -->
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<link rel="icon" type="images/png" href="images\favicon-16x16.png">
 
 <!--	Fonts
 	========================================================-->
@@ -48,6 +45,43 @@ include("config.php");
 <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
 <link rel="stylesheet" type="text/css" href="fonts/flaticon/flaticon.css">
 <link rel="stylesheet" type="text/css" href="css/style.css">
+<meta name="description" content="Découvrez des logements uniques avec Atypik House. Réservez des hébergements hors du commun pour une expérience inoubliable.">
+    
+    <!-- Balises méta pour les réseaux sociaux (facultatif, mais recommandé) -->
+    <meta property="og:title" content="Atypik House - Votre destination unique">
+    <meta property="og:description" content="Découvrez des logements uniques avec Atypik House. Réservez des hébergements hors du commun pour une expérience inoubliable.">
+    <meta property="og:image" content="URL_de_l_image">
+    <meta property="og:url" content="URL_de_la_page">
+    <meta property="og:type" content="website">
+    
+    <!-- Balises méta pour les robots d'exploration -->
+    <meta name="robots" content="index, follow">
+    
+    <!-- Balises méta pour les mots-clés (moins important de nos jours, mais toujours utile) -->
+    <meta name="keywords" content="logements uniques, hébergements atypiques, réservation, expérience de voyage">
+    
+    <!-- Balise méta pour spécifier la langue de la page -->
+    <meta name="language" content="French">
+    
+    <!-- Balise méta pour indiquer l'auteur du site -->
+    <meta name="author" content="digital slayers ">
+    
+    <!-- Balise méta pour la définition de l'encodage des caractères -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- Meta Tags -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="icon" type="images/png" href="images\favicon-16x16.png">
+
+    
+    
+    <!-- Balise méta pour les informations de contact -->
+    <meta name="contact" content="contact@atypikhouse.com">
+    
+    <!-- Balise méta pour la durée de rafraîchissement automatique de la page (si applicable) -->
+    <meta http-equiv="refresh" content="300">
+
+
 
 <!--	Title
 	=========================================================-->
