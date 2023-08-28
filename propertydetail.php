@@ -122,6 +122,8 @@ include("config.php");
                                 <h5 class="mt-2 text-secondary text-capitalize"><?php echo $row['1'];?></h5>
                                 <span class="mb-sm-20 d-block text-capitalize"><i class="fas fa-map-marker-alt text-success font-12"></i> &nbsp;<?php echo $row['14'];?></span>
                                 <a href="booking.php?pid=<?php echo $row['0']; ?>" class="btn bg-info mt-4">Réserver</a>
+                                <a href="pay.php?price=<?php echo $row['13']; ?>" class="btn btn-primary">Payer</a>
+
 							</div>
                             <div class="col-md-6">
                                 <div class="text-success text-left h5 my-2 text-md-right"><?php echo $row['13'];?>€</div>

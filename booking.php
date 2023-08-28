@@ -112,6 +112,7 @@ include("config.php");
                                     <button type="submit" name="submit" class="btn bg-info mt-4">Réserver</button>
                                 </form>
 
+
 							</div>
                             <div class="col-md-6">
                                 <div class="text-left text-md-right">Prix</div>
