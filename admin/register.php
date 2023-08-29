@@ -1,37 +1,32 @@
 <?php 
 include("config.php");
-$error="";
-$msg="";
-if(isset($_REQUEST['insert']))
-{
-	$name=$_REQUEST['name'];
-	$email=$_REQUEST['email'];
-	$pass=$_REQUEST['pass'];
-	$dob=$_REQUEST['dob'];
-	$phone=$_REQUEST['phone'];
-	
-	if(!empty($name) && !empty($email) && !empty($pass)  && !empty($dob) && !empty($phone))
-	{
-		$sql="insert into admin (auser,aemail,apass,adob,aphone) values('$name','$email','$pass','$dob','$phone')";
-		$result=mysqli_query($con,$sql);
-		if($result)
-			{
-				$msg='Inscription Administrateur réussi';
-				
-						
-			}
-			else
-			{
-				$error='* Inscription Administrateur échouée Réessayez';
-			}
-	}
-	else{
-		$error="* Veuillez remplir tous les champs!";
-	}
-	
-	
+$error = "";
+$msg = "";
+
+if (isset($_POST['insert'])) {
+    $name = mysqli_real_escape_string($con, $_POST['name']);
+    $email = mysqli_real_escape_string($con, $_POST['email']);
+    $pass = $_POST['pass']; // Le mot de passe ne doit pas être modifié ici
+    $dob = $_POST['dob'];
+    $phone = $_POST['phone'];
+
+    if (!empty($name) && !empty($email) && !empty($pass) && !empty($dob) && !empty($phone)) {
+        $hashed_pass = password_hash($pass, PASSWORD_DEFAULT); // Hasher le mot de passe
+
+        $sql = "INSERT INTO admin (auser, aemail, apass, adob, aphone) VALUES ('$name', '$email', '$hashed_pass', '$dob', '$phone')";
+        $result = mysqli_query($con, $sql);
+
+        if ($result) {
+            $msg = 'Inscription Administrateur réussi';
+        } else {
+            $error = '* Inscription Administrateur échouée Réessayez';
+        }
+    } else {
+        $error = "* Veuillez remplir tous les champs!";
+    }
 }
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
     

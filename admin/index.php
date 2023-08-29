@@ -1,34 +1,36 @@
 <?php 
-	session_start();
-	include("config.php");
-	$error="";
-	if(isset($_POST['login']))
-	{
-		$user=$_REQUEST['user'];
-		$pass=$_REQUEST['pass'];
-		$pass= ($pass);
-		
-		if(!empty($user) && !empty($pass))
-		{
-			$query = "SELECT auser, apass FROM admin WHERE auser='$user' AND apass='$pass'";
-			$result = mysqli_query($con,$query)or die(mysqli_error());
-			$num_row = mysqli_num_rows($result);
-			$row=mysqli_fetch_array($result);
-			if( $num_row ==1 )
-			{
-				$_SESSION['auser']=$user;
-				header("Location: dashboard.php");
-			}
-			else
-			{
-				$error='* Nom d’utilisateur et mot de passe invalides';
-			}
-		}else{
-			$error="* S’il vous plaît remplir tous les champs!";
-		}
-		
-	}   
+    session_start();
+    include("config.php");
+    $error = "";
+
+    if (isset($_POST['login'])) {
+        $user = mysqli_real_escape_string($con, $_POST['user']); // Utilisez mysqli_real_escape_string pour éviter les injections SQL
+        $pass = $_POST['pass']; // Le mot de passe ne doit pas être modifié ici
+
+        if (!empty($user) && !empty($pass)) {
+            $query = "SELECT auser, apass FROM admin WHERE auser='$user'";
+            $result = mysqli_query($con, $query) or die(mysqli_error($con));
+            $num_row = mysqli_num_rows($result);
+
+            if ($num_row == 1) {
+                $row = mysqli_fetch_array($result);
+                $stored_hash = $row['apass'];
+                if (password_verify($pass, $stored_hash)) { // Utilisez password_verify pour vérifier le mot de passe hashé
+                    $_SESSION['auser'] = $user;
+                    header("Location: dashboard.php");
+                    exit(); // Assurez-vous de terminer le script après la redirection
+                } else {
+                    $error = '* Nom d’utilisateur et mot de passe invalides';
+                }
+            } else {
+                $error = '* Nom d’utilisateur et mot de passe invalides';
+            }
+        } else {
+            $error = "* S’il vous plaît remplir tous les champs!";
+        }
+    }
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
     
