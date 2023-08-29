@@ -1,6 +1,17 @@
 <?php
 require_once('./config_stripe.php');
 
+
+require_once('./vendor/autoload.php'); // Assurez-vous que le chemin est correct
+
+$dotenv = \Dotenv\Dotenv::createImmutable(__DIR__);
+$dotenv->load();
+
+$stripe_secret_key = $_ENV['STRIPE_SECRET_KEY'];
+
+\Stripe\Stripe::setApiKey($stripe_secret_key);
+
+
 if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['price'])) {
     $price = $_GET['price'];
     $amount_in_cents = $price * 100;

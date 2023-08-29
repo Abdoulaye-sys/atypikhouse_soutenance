@@ -1,47 +1,29 @@
 <?php 
 include("config.php");
-$error="";
-$msg="";
-if(isset($_REQUEST['reg']))
-{
-	$name=$_REQUEST['name'];
-	$email=$_REQUEST['email'];
-	$phone=$_REQUEST['phone'];
-	$pass=$_REQUEST['pass'];
-	$utype=$_REQUEST['utype'];
-	
-	$uimage=$_FILES['uimage']['name'];
-	$temp_name1 = $_FILES['uimage']['tmp_name'];
-	$pass= sha1($pass);
-	
-	$query = "SELECT * FROM user where uemail='$email'";
-	$res=mysqli_query($con, $query);
-	$num=mysqli_num_rows($res);
-	
-	if($num == 1)
-	{
-		$error = "<p class='alert alert-warning'>L'identifiant de messagerie existe déjà</p> ";
-	}
-	else
-	{
-		
-		if(!empty($name) && !empty($email) && !empty($phone) && !empty($pass) && !empty($uimage))
-		{
-			
-			$sql="INSERT INTO user (uname,uemail,uphone,upass,utype,uimage) VALUES ('$name','$email','$phone','$pass','$utype','$uimage')";
-			$result=mysqli_query($con, $sql);
-			move_uploaded_file($temp_name1,"admin/user/$uimage");
-			   if($result){
-				   $msg = "<p class='alert alert-success'>Votre Compte a bien été crée</p> ";
-			   }
-			   else{
-				   $error = "<p class='alert alert-warning'>Votre Compte n'a pas été crée</p> ";
-			   }
-		}else{
-			$error = "<p class='alert alert-warning'>Veuillez remplir tous les champs</p>";
-		}
-	}
-	
+$error = "";
+$msg = "";
+
+if(isset($_POST['insert'])) {
+    $name = mysqli_real_escape_string($con, $_POST['name']);
+    $email = mysqli_real_escape_string($con, $_POST['email']);
+    $pass = $_POST['pass'];
+    $dob = $_POST['dob'];
+    $phone = mysqli_real_escape_string($con, $_POST['phone']);
+    
+    if(!empty($name) && !empty($email) && !empty($pass) && !empty($dob) && !empty($phone)) {
+        $hashed_pass = password_hash($pass, PASSWORD_DEFAULT); // Hachage du mot de passe
+        $stmt = $con->prepare("INSERT INTO admin (auser, aemail, apass, adob, aphone) VALUES (?, ?, ?, ?, ?)");
+        $stmt->bind_param("sssss", $name, $email, $hashed_pass, $dob, $phone);
+
+        if ($stmt->execute()) {
+            $msg = "Inscription Administrateur réussie";
+        } else {
+            $error = "Inscription Administrateur échouée. Réessayez";
+        }
+        $stmt->close();
+    } else {
+        $error = "Veuillez remplir tous les champs!";
+    }
 }
 ?>
 <!DOCTYPE html>

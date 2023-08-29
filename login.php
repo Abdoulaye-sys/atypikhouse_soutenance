@@ -1,32 +1,28 @@
 <?php 
 session_start();
 include("config.php");
-$error="";
-$msg="";
-if(isset($_REQUEST['login']))
-{
-	$email=$_REQUEST['email'];
-	$pass=$_REQUEST['pass'];
-	$pass= sha1($pass);
-	
-	if(!empty($email) && !empty($pass))
-	{
-		$sql = "SELECT * FROM user where uemail='$email' && upass='$pass'";
-		$result=mysqli_query($con, $sql);
-		$row=mysqli_fetch_array($result);
-		   if($row){
-			   
-				$_SESSION['uid']=$row['uid'];
-				$_SESSION['uemail']=$email;
-				header("location:index.php");
-				
-		   }
-		   else{
-			   $error = "<p class='alert alert-warning'>L'e-mail ou le mot de passe ne correspondent pas!</p> ";
-		   }
-	}else{
-		$error = "<p class='alert alert-warning'>Veuillez remplir tous les champs</p>";
-	}
+$error = "";
+$msg = "";
+
+if(isset($_POST['login'])) {
+    $email = mysqli_real_escape_string($con, $_POST['email']);
+    $pass = $_POST['pass'];
+    
+    if(!empty($email) && !empty($pass)) {
+        $sql = "SELECT * FROM user WHERE uemail='$email'";
+        $result = mysqli_query($con, $sql);
+        $row = mysqli_fetch_assoc($result);
+
+        if ($row && password_verify($pass, $row['upass'])) {
+            $_SESSION['uid'] = $row['uid'];
+            $_SESSION['uemail'] = $email;
+            header("location:index.php");
+        } else {
+            $error = "<p class='alert alert-warning'>L'e-mail ou le mot de passe ne correspondent pas!</p> ";
+        }
+    } else {
+        $error = "<p class='alert alert-warning'>Veuillez remplir tous les champs</p>";
+    }
 }
 ?>
 <!DOCTYPE html>
