@@ -15,22 +15,12 @@
                                     <div class="row">
                                         <div class="col-md-4 col-lg-4">
                                             <div class="footer-widget footer-nav mb-4">
-                                                <h4 class="widget-title text-white double-down-line-left position-relative">Support</h4>
-                                                <ul class="hover-text-primary">
-                                                    <li><a href="#" class="text-white">Forum</a></li>
-                                                    <li><a href="#" class="text-white">Termes et conditions</a></li>
-                                                    <li><a href="#" class="text-white">Foire aux questions</a></li>
-                                                    <li><a href="contact.php" class="text-white">Contact</a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-4 col-lg-4">
-                                            <div class="footer-widget footer-nav mb-4">
                                                 <h4 class="widget-title text-white double-down-line-left position-relative">Liens rapides</h4>
                                                 <ul class="hover-text-primary">
                                                     <li><a href="about.php" class="text-white">À propos de nous</a></li>
-                                                    <li><a href="property.php" class="text-white">Propriété en vedette</a></li>
+                                                    <li><a href="property.php" class="text-white">Hébergements en vedette</a></li>
                                                     <li><a href="submitproperty.php" class="text-white">Soumettre la propriété</a></li>
+                                                    <li><a href="contact.php" class="text-white">Contact</a></li>
                                                     <li><a href="agent.php" class="text-white">Nos Agents</a></li>
                                                 </ul>
                                             </div>
@@ -47,6 +37,34 @@
                                             </div>
                                             <div class="footer-widget media-widget mt-4 text-white hover-text-primary"> <a href=""><i class="fab fa-facebook-f"></i></a> <a href="https://twitter.com/i/flow/login?redirect_after_login=%2Fatypikhome"><i class="fab fa-twitter"></i></a> <a href="#"><i class="fab fa-google-plus-g"></i></a> <a href="#"><i class="fab fa-linkedin-in"></i></a> <a href="#"><i class="fas fa-rss"></i></a> </div>
                                         </div>
+
+                                        <div class="sidebar-widget">
+                            <h4 class="double-down-line-left text-secondary position-relative pb-4 my-4">Calculez votre crédit</h4>
+						<form class="d-inline-block w-100" action="calc.php" method="post">
+                            <label class="sr-only">Prix de l'immobilier</label>
+                            <div class="input-group mb-2 mr-sm-2">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text">€</div>
+                                </div>
+                                <input type="text" class="form-control" name="amount" placeholder="Prix de l'immobilier">
+                            </div>
+                            <label class="sr-only">Mois</label>
+                            <div class="input-group mb-2 mr-sm-2">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text"><i class="far fa-calendar-alt"></i></div>
+                                </div>
+                                <input type="text" class="form-control" name="month" placeholder="Duree en années">
+                            </div>
+                            <label class="sr-only">Taux d’intérêt</label>
+                            <div class="input-group mb-2 mr-sm-2">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text">%</div>
+                                </div>
+                                <input type="text" class="form-control" name="interest" placeholder="Taux d’intérêt">
+                            </div>
+                            <button type="submit" value="submit" name="calc" class="btn btn-danger mt-4">Calculez</button>
+                        </form>
+                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -57,9 +75,10 @@
                     <div class="col-sm-6"> <span class="text-white">© <?php echo date('Y');?> Atypik House Website - Developper Par Abdoulaye Ba</span> </div>
                     <div class="col-sm-6">
                         <ul class="line-menu text-white hover-text-primary float-right">
-                            <li><a href="#">Politique de confidentialité</a></li>
-                            <li>|</li>
-                            <li><a href="#"> Site Map</a></li>
+                            <li><a href="politique.php">Politique de confidentialité</a></li>
+                            <li><a href="cgv.php">CGV</a></li>
+                            <li><a href="mentions.php">Mentions legales</a></li>
+                            <li><a href="sitemap.php"> Site Map</a></li>
                         </ul>
                     </div>
                 </div>

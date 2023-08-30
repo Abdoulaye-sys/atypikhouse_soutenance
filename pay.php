@@ -32,8 +32,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['price'])) {
                 ],
             ],
             'mode' => 'payment',
-            'success_url' => 'https://localhost/atypikhouse/index.php?session_id={CHECKOUT_SESSION_ID}',
-            'cancel_url' => 'https://localhost/annulation.php',
+            'success_url' => 'http://localhost/atypikhouse/index.php',
+            'cancel_url' => 'http://localhost/atypikhouse/annulation.php',
         ]);
 
         header("Location: " . $session->url);

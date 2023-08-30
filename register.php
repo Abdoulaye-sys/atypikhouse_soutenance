@@ -3,29 +3,63 @@ include("config.php");
 $error = "";
 $msg = "";
 
-if(isset($_POST['insert'])) {
+if(isset($_POST['reg'])) {
     $name = mysqli_real_escape_string($con, $_POST['name']);
     $email = mysqli_real_escape_string($con, $_POST['email']);
-    $pass = $_POST['pass'];
-    $dob = $_POST['dob'];
     $phone = mysqli_real_escape_string($con, $_POST['phone']);
+    $pass = $_POST['pass'];
+    $utype = $_POST['utype'];
     
-    if(!empty($name) && !empty($email) && !empty($pass) && !empty($dob) && !empty($phone)) {
-        $hashed_pass = password_hash($pass, PASSWORD_DEFAULT); // Hachage du mot de passe
-        $stmt = $con->prepare("INSERT INTO admin (auser, aemail, apass, adob, aphone) VALUES (?, ?, ?, ?, ?)");
-        $stmt->bind_param("sssss", $name, $email, $hashed_pass, $dob, $phone);
+    $uimage = $_FILES['uimage']['name'];
+    $temp_name1 = $_FILES['uimage']['tmp_name'];
 
-        if ($stmt->execute()) {
-            $msg = "Inscription Administrateur réussie";
-        } else {
-            $error = "Inscription Administrateur échouée. Réessayez";
-        }
-        $stmt->close();
+    // Validation et nettoyage
+    if (empty($name) || empty($email) || empty($phone) || empty($pass) || empty($uimage)) {
+        $error = "<p class='alert alert-warning'>Veuillez remplir tous les champs</p>";
     } else {
-        $error = "Veuillez remplir tous les champs!";
+        // Vérification du nombre maximum de caractères
+        if (strlen($pass) > 20) {
+            $error = "<p class='alert alert-warning'>Le mot de passe ne peut pas dépasser 20 caractères</p>";
+        } else {
+            // Vérification des mots de passe courants
+            $commonPasswords = array("123456", "password", "qwerty"); // Ajoutez d'autres mots de passe courants si nécessaire
+            if (in_array($pass, $commonPasswords)) {
+                $error = "<p class='alert alert-warning'>Veuillez choisir un mot de passe plus sécurisé</p>";
+            } else {
+                // Vérification de la présence de majuscules et de caractères spéciaux
+                if (!preg_match('/[A-Z]/', $pass) || !preg_match('/[^a-zA-Z0-9]/', $pass)) {
+                    $error = "<p class='alert alert-warning'>Le mot de passe doit contenir au moins une majuscule et un caractère spécial</p>";
+                } else {
+                    // Vérification de l'email
+                    $query = "SELECT * FROM user WHERE uemail='$email'";
+                    $res = mysqli_query($con, $query);
+                    $num = mysqli_num_rows($res);
+
+                    if ($num == 1) {
+                        $error = "<p class='alert alert-warning'>L'identifiant de messagerie existe déjà</p> ";
+                    } else {
+                        // Hashage du mot de passe
+                        $hashed_pass = password_hash($pass, PASSWORD_DEFAULT);
+
+                        // Insertion des données
+                        $sql = "INSERT INTO user (uname, uemail, uphone, upass, utype, uimage) 
+                                VALUES ('$name', '$email', '$phone', '$hashed_pass', '$utype', '$uimage')";
+
+                        if (mysqli_query($con, $sql)) {
+                            move_uploaded_file($temp_name1, "admin/user/$uimage");
+                            $msg = "<p class='alert alert-success'>Votre Compte a bien été créé</p> ";
+                            $error = ""; // Réinitialisation de l'erreur car le compte a été créé avec succès
+                        } else {
+                            $error = "<p class='alert alert-warning'>Votre Compte n'a pas été créé</p> ";
+                        }
+                    }
+                }
+            }
+        }
     }
 }
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

@@ -15,8 +15,8 @@ $msg="";
 if(isset($_POST['add']))
 {
 	
-	$title=$_POST['title'];
-	$content=$_POST['content'];
+	$title = mysqli_real_escape_string($con, $_POST['title']);
+    $content = mysqli_real_escape_string($con, $_POST['content']);
 	$ptype=$_POST['ptype'];
 	$bhk=$_POST['bhk'];
 	$bed=$_POST['bed'];
@@ -73,15 +73,13 @@ if(isset($_POST['add']))
 	values('$title','$content','$ptype','$bhk','$stype','$bed','$bath','$balc','$kitc','$hall','$floor','$asize','$price',
 	'$loc','$city','$state','$feature','$aimage','$aimage1','$aimage2','$aimage3','$aimage4','$uid','$status','$fimage','$fimage1','$fimage2','$totalfloor', '$isFeatured')";
 	$result=mysqli_query($con,$sql);
-	if($result)
-		{
-			$msg="<p class='alert alert-success'>Propriété insérée avec succès</p>";
-					
-		}
-		else
-		{
-			$error="<p class='alert alert-warning'>Propriété non insérée Une erreur</p>";
-		}
+	if($result) {
+        $msg = "<p class='alert alert-success'>Propriété insérée avec succès</p>";
+    } else {
+        $error = "<p class='alert alert-warning'>Une erreur s'est produite lors de l'insertion de la propriété. Veuillez réessayer plus tard.</p>";
+        // Ajouter une vérification des erreurs MySQLi et afficher les détails si nécessaire
+        $error .= "<p class='alert alert-danger'>" . mysqli_error($con) . "</p>";
+    }
 }							
 ?>
 <!DOCTYPE html>

@@ -1,31 +1,67 @@
-<?php 
+<?php
 include("config.php");
-$error="";
-$msg="";
-if(isset($_POST['send']))
-{
-	$name=$_POST['name'];
-	$email=$_POST['email'];
-	$phone=$_POST['phone'];
-	$subject=$_POST['subject'];
-	$message=$_POST['message'];
+$error = "";
+$msg = "";
+
+if (isset($_POST['send'])) {
+    $name = $_POST['name'];
+    $email = $_POST['email'];
+    $phone = $_POST['phone'];
+    $subject = $_POST['subject'];
+    $message = $_POST['message'];
+    $captcha_response = $_POST['g-recaptcha-response'];
+
+    // Vérification du reCAPTCHA
+    $secretKey = "6LeP2uYnAAAAALGumpuA3QAHOj5SqbxZVB6zAkrN";
+    $url = "https://www.google.com/recaptcha/api/siteverify";
+    $data = array(
+        'secret' => $secretKey,
+        'response' => $captcha_response
+    );
+    $options = array(
+        'http' => array(
+            'header' => "Content-type: application/x-www-form-urlencoded\r\n",
+            'method' => 'POST',
+            'content' => http_build_query($data)
+        )
+    );
+    $context = stream_context_create($options);
+    $result = file_get_contents($url, false, $context);
+    $responseKeys = json_decode($result, true);
+
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+		$captcha_response = $_POST['g-recaptcha-response'];
 	
-	if(!empty($name) && !empty($email) && !empty($phone) && !empty($subject) && !empty($message))
-	{
-		
-		$sql="INSERT INTO contact (name,email,phone,subject,message) VALUES ('$name','$email','$phone','$subject','$message')";
-		   $result=mysqli_query($con, $sql);
-		   if($result){
-			   $msg = "<p class='alert alert-success'>Message envoyé avec succès</p> ";
-		   }
-		   else{
-			   $error = "<p class='alert alert-warning'>Le message n'a pas été envoyé avec succès</p> ";
-		   }
-	}else{
-		$error = "<p class='alert alert-warning'>Veuillez remplir tous les champs</p>";
+		// Vérification du reCAPTCHA
+		$secretKey = "6LdIIucnAAAAAJkbIM6TeSai1COBmtJlCW7DS4Xk";
+		$url = "https://www.google.com/recaptcha/api/siteverify";
+		$data = array(
+			'secret' => $secretKey,
+			'response' => $captcha_response
+		);
+		$options = array(
+			'http' => array(
+				'header' => "Content-type: application/x-www-form-urlencoded\r\n",
+				'method' => 'POST',
+				'content' => http_build_query($data)
+			)
+		);
+		$context = stream_context_create($options);
+		$result = file_get_contents($url, false, $context);
+		$responseKeys = json_decode($result, true);
+	
+		if (intval($responseKeys["success"]) !== 1) {
+			// Échec de la vérification du reCAPTCHA
+			echo "Veuillez vérifier le reCAPTCHA.";
+		} else {
+			// reCAPTCHA vérifié avec succès, continuez le traitement du formulaire
+			// ...
+		}
 	}
 }
 ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -33,6 +69,7 @@ if(isset($_POST['send']))
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
 <!-- Meta Tags -->
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -139,7 +176,7 @@ if(isset($_POST['send']))
 						</div>
 						<div class="row">
 							<div class="col-md-12">
-								<form class="w-100" action="#" method="post">
+								<form class="w-100" action="process_message.php" method="post">
 									<div class="row">
 										<div class="row mb-4">
 											<div class="form-group col-lg-6">
@@ -159,7 +196,7 @@ if(isset($_POST['send']))
 													<textarea name="message" class="form-control" rows="5" placeholder="Tapez votre message..."></textarea>
 												</div>
 											</div>
-										</div>
+											<div class="g-recaptcha" data-sitekey="6LdIIucnAAAAACCgL3V--FGB0gdb1rzPkUUVI526"></div>										</div>
 										<button type="submit" value="send message" name="send" class="btn btn-success">Envoyez le message</button>
 									</div>
 								</form>

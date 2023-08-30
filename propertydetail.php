@@ -122,7 +122,7 @@ include("config.php");
                                 <h5 class="mt-2 text-secondary text-capitalize"><?php echo $row['1'];?></h5>
                                 <span class="mb-sm-20 d-block text-capitalize"><i class="fas fa-map-marker-alt text-success font-12"></i> &nbsp;<?php echo $row['14'];?></span>
                                 <a href="booking.php?pid=<?php echo $row['0']; ?>" class="btn bg-info mt-4">Réserver</a>
-                                <a href="pay.php?price=<?php echo $row['13']; ?>" class="btn btn-primary">Payer</a>
+                                <!-- <a href="pay.php?price=<?php echo $row['13']; ?>" class="btn btn-primary">Payer</a> -->
 
 							</div>
                             <div class="col-md-6">
@@ -142,7 +142,7 @@ include("config.php");
                                     <li><span class="text-secondary"><?php echo $row['9'];?></span> cuisine</li>
                                 </ul>
                             </div>
-                            <h4 class="text-secondary my-4">description</h4>
+                            <h4 class="text-secondary my-4">Description</h4>
                             <p><?php echo $row['2'];?></p>
                             
                             <h5 class="mt-5 mb-4 text-secondary">Appartement</h5>
@@ -171,12 +171,12 @@ include("config.php");
                                     </tbody>
                                 </table>
                             </div>
-                            <h5 class="mt-5 mb-4 text-secondary">caractéristiques</h5>
+                            <h5 class="mt-5 mb-4 text-secondary">Caractéristiques</h5>
                             <div class="row">
 								<?php echo $row['17'];?>
 								
                             </div>   
-                            <h5 class="mt-5 mb-4 text-secondary">plans d'étage</h5>
+                            <h5 class="mt-5 mb-4 text-secondary">Plans d'étage</h5>
                             <div class="accordion" id="accordionExample">
                                 <button class="bg-gray hover-bg-success hover-text-white text-ordinary py-3 px-4 mb-1 w-100 text-left rounded position-relative" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne"> plans d'étage </button>
                                 <div id="collapseOne" class="collapse show p-4" aria-labelledby="headingOne" data-parent="#accordionExample">
@@ -189,7 +189,7 @@ include("config.php");
                                     <img src="admin/property/<?php echo $row['27'];?>" alt="Not Available"> </div>
                             </div>
 
-                            <h5 class="mt-5 mb-4 text-secondary double-down-line-left position-relative">contacter l'agent</h5>
+                            <h5 class="mt-5 mb-4 text-secondary double-down-line-left position-relative">Contacter l'agent</h5>
                             <div class="agent-contact pt-60">
                                 <div class="row">
                                     <div class="col-sm-4 col-lg-3"> <img src="admin/user/<?php echo $row['uimage']; ?>" alt="" height="200" width="170"> </div>
@@ -251,32 +251,7 @@ include("config.php");
                                 </div>
                             </div>
                         </form> -->
-                        <h4 class="double-down-line-left text-secondary position-relative pb-4 my-4">Calculateur de versements</h4>
-                        <form class="d-inline-block w-100" action="calc.php" method="post">
-                            <label class="sr-only">Montant</label>
-                            <div class="input-group mb-2 mr-sm-2">
-                                <div class="input-group-prepend">
-                                    <div class="input-group-text">€</div>
-                                </div>
-                                <input type="text" class="form-control" name="amount" placeholder="prix de la propriété">
-                            </div>
-                            <label class="sr-only">Mois</label>
-                            <div class="input-group mb-2 mr-sm-2">
-                                <div class="input-group-prepend">
-                                    <div class="input-group-text"><i class="far fa-calendar-alt"></i></div>
-                                </div>
-                                <input type="text" class="form-control" name="month" placeholder="Durée Année">
-                            </div>
-                            <label class="sr-only">taux d'intérêt</label>
-                            <div class="input-group mb-2 mr-sm-2">
-                                <div class="input-group-prepend">
-                                    <div class="input-group-text">%</div>
-                                </div>
-                                <input type="text" class="form-control" name="interest" placeholder="taux d'intérêt">
-                            </div>
-                            <button type="submit" value="submit" name="calc" class="btn btn-danger mt-4">Calculez</button>
-                        </form>
-                        <h4 class="double-down-line-left text-secondary position-relative pb-4 mb-4 mt-5">propriété recommandée</h4>
+                        <h4 class="double-down-line-left text-secondary position-relative pb-4 mb-4 mt-5">Hébergement recommandée</h4>
                         <ul class="property_list_widget">
 							
                             <?php 
@@ -294,7 +269,7 @@ include("config.php");
                         </ul>
 
                         <div class="sidebar-widget mt-5">
-                            <h4 class="double-down-line-left text-secondary position-relative pb-4 mb-4">Propriété récemment ajoutée</h4>
+                            <h4 class="double-down-line-left text-secondary position-relative pb-4 mb-4">Hébergement récemment ajoutée</h4>
                             <ul class="property_list_widget">
 							
 								<?php 

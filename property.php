@@ -135,35 +135,8 @@ include("config.php");
                     </div>
 					
                     <div class="col-lg-4">
-                        <div class="sidebar-widget">
-                            <h4 class="double-down-line-left text-secondary position-relative pb-4 my-4">Calculateur de versement</h4>
-						<form class="d-inline-block w-100" action="calc.php" method="post">
-                            <label class="sr-only">Montant de la propriété</label>
-                            <div class="input-group mb-2 mr-sm-2">
-                                <div class="input-group-prepend">
-                                    <div class="input-group-text">€</div>
-                                </div>
-                                <input type="text" class="form-control" name="amount" placeholder="Prix ​​de l'immobilier">
-                            </div>
-                            <label class="sr-only">Mois</label>
-                            <div class="input-group mb-2 mr-sm-2">
-                                <div class="input-group-prepend">
-                                    <div class="input-group-text"><i class="far fa-calendar-alt"></i></div>
-                                </div>
-                                <input type="text" class="form-control" name="month" placeholder="Durée Année">
-                            </div>
-                            <label class="sr-only">Taux d'intérêt</label>
-                            <div class="input-group mb-2 mr-sm-2">
-                                <div class="input-group-prepend">
-                                    <div class="input-group-text">%</div>
-                                </div>
-                                <input type="text" class="form-control" name="interest" placeholder="Taux d'intérêt">
-                            </div>
-                            <button type="submit" value="submit" name="calc" class="btn btn-danger mt-4">Calculer le versement</button>
-                        </form>
-                        </div>
 
-                        <h4 class="double-down-line-left text-secondary position-relative pb-4 mb-4 mt-5">Propriété en vedette</h4>
+                        <h4 class="double-down-line-left text-secondary position-relative pb-4 mb-4 mt-5">Hébergements en vedette</h4>
                         <ul class="property_list_widget">
 							
                             <?php 
@@ -181,7 +154,7 @@ include("config.php");
                         </ul>
                         
                         <div class="sidebar-widget mt-5">
-                            <h4 class="double-down-line-left text-secondary position-relative pb-4 mb-4">Propriété récemment ajoutée</h4>
+                            <h4 class="double-down-line-left text-secondary position-relative pb-4 mb-4">Hébergements récemment ajoutée</h4>
                             <ul class="property_list_widget">
 							
 								<?php 

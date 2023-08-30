@@ -2,13 +2,29 @@
 ini_set('session.cache_limiter','public');
 session_cache_limiter(false);
 session_start();
-include("config.php");
+// $error_message = "";
+
+// if (!isset($_SESSION['uemail'])) {
+//     $_SESSION['error_message'] = "Veuillez vous connecter pour effectuer une réservation.";
+//     header("Location: login.php");
+//     exit();
+// }
+
 								
 ?>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
+<style>
+    .form-label {
+        color: #28a745;
+        font-size: 16px;
+        font-weight: bold;
+        margin-bottom: 5px;
+    }
+</style>
+
 <!-- Required meta tags -->
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -102,21 +118,25 @@ include("config.php");
                                 <h5 class="mt-2 text-secondary text-capitalize"><?php echo $row['1'];?></h5>
                                 <span class="mb-sm-20 d-block text-capitalize"><i class="fas fa-map-marker-alt text-success font-12"></i> &nbsp;<?php echo $row['14'];?></span>
                                 <h2>Réserver ce logement</h2>
-                                <form action="process_reservation.php" method="post">
-                                    <input type="hidden" name="property_id" value="<?php echo $property_id; ?>">
-                                    <label for="dates">Dates de séjour :</label>
-                                    <input type="text" class="datepicker" name="dates" required>
-                                    <input type="hidden" name="disponibilite" value="<?php echo $property_data['disponibilite']; ?>">
-                                    <label for="dates_reservees">Dates réservées :</label>
-                                    <input type="text" name="dates_reservees" required>
-                                    <button type="submit" name="submit" class="btn bg-info mt-4">Réserver</button>
+                                <form action="process_booking.php" method="post">
+                                    <input type="hidden" name="property_id" value="<?php echo $_GET['pid']; ?>">
+                                    <label class="form-label" for="arrival_date">Choisissez votre date d'arrivée :</label>
+                                    <input type="date" name="arrival_date" required>
+                                    <br>
+                                    <label class="form-label" for="departure_date">Choisissez votre date de départ :</label>
+                                    <input type="date" name="departure_date" required>
+                                    <br>
+                                    <!-- Autres champs et informations -->
+                                    <br>
+                                    <button class="btn btn-success d-none d-xl-block" style="border-radius:30px;" type="submit" name="submit">Réserver et Payer</button>
                                 </form>
+
 
 
 							</div>
                             <div class="col-md-6">
                                 <div class="text-left text-md-right">Prix</div>
-                                <div class="text-success text-left h5 my-2 text-md-right"><?php echo $row['13'];?>€</div>
+                                <div class="text-success text-left h5 my-2 text-md-right"><?php echo $row['13'];?>€ / nuit</div>
 
                             </div>
                         </div>

@@ -22,7 +22,58 @@ include("config.php");
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
+<!-- Inclure jQuery -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.1/dist/js.cookie.min.js"></script>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/validate.js/0.13.1/validate.min.js"></script>
+    <!-- Inclure jquery.cookie.js -->
+    <!-- ... Autres balises <script> ... -->
+    <style>
+        /* Styles pour la bannière de cookies */
+        .cookie-banner {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: #333;
+            color: #fff;
+            padding: 15px;
+            text-align: center;
+            display: none; /* Cachez la bannière par défaut */
+            z-index: 9999; /* Assurez-vous qu'elle s'affiche au-dessus de tout */
+        }
+        .cookie-banner p {
+            margin: 0;
+        }
+        .cookie-banner button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+    </style>
+   <script>
+    // Lorsque la page a fini de charger
+    $(document).ready(function() {
+        // Vérifie si l'utilisateur a déjà accepté les cookies
+        if (!Cookies.get('cookie_accepted')) {
+            // Affiche la bannière de cookies
+            $('.cookie-banner').show();
+        }
+    });
+
+    // Fonction pour accepter les cookies
+    function acceptCookies() {
+        // Définir un cookie pour enregistrer l'acceptation
+        Cookies.set('cookie_accepted', 'true', { expires: 365 }); // Cookie expirera dans un an
+
+        // Masquer la bannière de cookies
+        $('.cookie-banner').hide();
+    }
+</script>
+
 <!-- Required meta tags -->
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -88,6 +139,14 @@ include("config.php");
 <title>Atypik House</title>
 </head>
 <body>
+<!-- Bannière de cookies en pop-up -->
+<div class="cookie-banner">
+        <p>En utilisant ce site, vous acceptez l'utilisation de cookies pour améliorer votre expérience.</p>
+        <button onclick="acceptCookies()">J'accepte</button>
+    </div>
+
+   
+
 
 <!--	Page Loader  -->
 <!--<div class="page-loader position-fixed z-index-9999 w-100 bg-white vh-100">
@@ -201,7 +260,7 @@ include("config.php");
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
-                        <h2 class="text-secondary double-down-line text-center mb-4">Propriété récente</h2>
+                        <h2 class="text-secondary double-down-line text-center mb-4">Nos hébergements</h2>
                     </div>
                     <!--- <div class="col-md-6">
                         <ul class="nav property-btn float-right" id="pills-tab" role="tablist">
@@ -221,34 +280,46 @@ include("config.php");
 										{
 									?>
 								
-                                    <div class="col-md-6 col-lg-4">
-                                        <div class="featured-thumb hover-zoomer mb-4">
-                                            <div class="overlay-black overflow-hidden position-relative"> <img src="admin/property/<?php echo $row['18'];?>" alt="pimage">
-                                                <div class="featured bg-success text-white">Nouveaux</div>
-                                                <div class="sale bg-success text-white text-capitalize">A <?php echo $row['5'];?></div>
-                                                <div class="price text-primary"><b><?php echo $row['13'];?> €</b><span class="text-white"><?php echo $row['12'];?> m²</span></div>
-                                            </div>
-                                            <div class="featured-thumb-data shadow-one">
-                                                <div class="p-3">
-                                                    <h5 class="text-secondary hover-text-success mb-2 text-capitalize"><a href="propertydetail.php?pid=<?php echo $row['0'];?>"><?php echo $row['1'];?></a></h5>
-                                                    <span class="location text-capitalize"><i class="fas fa-map-marker-alt text-success"></i> <?php echo $row['14'];?></span> </div>
-                                                <div class="bg-gray quantity px-4 pt-4">
-                                                    <ul>
-                                                        <li><span><?php echo $row['12'];?></span> m²</li>
-                                                        <li><span><?php echo $row['6'];?></span> Lits</li>
-                                                        <li><span><?php echo $row['7'];?></span>Thermes</li>
-                                                        <li><span><?php echo $row['9'];?></span> Cuisine</li>
-                                                        <li><span><?php echo $row['8'];?></span> Balcon</li>
-                                                        
-                                                    </ul>
-                                                </div>
-                                                <div class="p-4 d-inline-block w-100">
-                                                    <div class="float-left text-capitalize"><i class="fas fa-user text-success mr-1"></i>Par : <?php echo $row['uname'];?></div>
-                                                    <div class="float-right"><i class="far fa-calendar-alt text-success mr-1"></i> <?php echo date('d-m-Y', strtotime($row['date']));?></div> 
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                                <div class="col-md-6 col-lg-4">
+    <div class="featured-thumb hover-zoomer mb-4">
+        <div class="overlay-black overflow-hidden position-relative">
+            <a href="propertydetail.php?pid=<?php echo $row['0'];?>">
+                <img src="admin/property/<?php echo $row['18'];?>" alt="pimage" id="propertyImage<?php echo $row['0'];?>">
+            </a>
+            <div class="featured bg-success text-white">Nouveaux</div>
+            <div class="sale bg-success text-white text-capitalize">A <?php echo $row['5'];?></div>
+            <div class="price text-primary"><b><?php echo $row['13'];?> € / nuit</b><span class="text-white"><?php echo $row['12'];?> m²</span></div>
+        </div>
+        <div class="featured-thumb-data shadow-one">
+            <div class="p-3">
+                <h5 class="text-secondary hover-text-success mb-2 text-capitalize"><a href="propertydetail.php?pid=<?php echo $row['0'];?>"><?php echo $row['1'];?></a></h5>
+                <span class="location text-capitalize"><i class="fas fa-map-marker-alt text-success"></i> <?php echo $row['14'];?></span>
+            </div>
+            <div class="bg-gray quantity px-4 pt-4">
+                <ul>
+                    <li><span><?php echo $row['12'];?></span> m²</li>
+                    <li><span><?php echo $row['6'];?></span> Lits</li>
+                    <li><span><?php echo $row['7'];?></span>Thermes</li>
+                    <li><span><?php echo $row['9'];?></span> Cuisine</li>
+                    <li><span><?php echo $row['8'];?></span> Balcon</li>
+                </ul>
+            </div>
+            <div class="p-4 d-inline-block w-100">
+                <div class="float-left text-capitalize"><i class="fas fa-user text-success mr-1"></i>Par : <?php echo $row['uname'];?></div>
+                <div class="float-right"><i class="far fa-calendar-alt text-success mr-1"></i> <?php echo date('d-m-Y', strtotime($row['date']));?></div>
+                <a href="propertydetail.php?pid=<?php echo $row['0'];?>" class="btn btn-primary">Voir détails</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Ajoute un événement de clic à l'image pour rediriger vers la page de détails de la propriété
+    document.getElementById('propertyImage<?php echo $row['0'];?>').addEventListener('click', function() {
+        window.location.href = 'propertydetail.php?pid=<?php echo $row['0'];?>';
+    });
+</script>
+
                                     
 									<?php } ?>
 
@@ -444,6 +515,7 @@ include("config.php");
 			</div>
 		</div>
 		<!--	Testonomial -->
+        
 		
 		
         <!--	Footer   start-->
@@ -475,8 +547,6 @@ include("config.php");
 <script src="js/jquery.slider.js"></script> 
 <script src="js/wow.js"></script> 
 <script src="js/YouTubePopUp.jquery.js"></script> 
-<script src="js/validate.js"></script> 
-<script src="js/jquery.cookie.js"></script> 
 <script src="js/custom.js"></script>
 </body>
 

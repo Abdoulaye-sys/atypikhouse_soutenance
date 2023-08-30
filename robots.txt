@@ -1,0 +1,6 @@
+User-agent: *
+Disallow: /admin
+Disallow: /login
+
+
+Sitemap: http://localhost/atypikhouse/sitemap.php
